@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+
+    <link rel="stylesheet" type="text/css" href="./assets/css/App.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/components/login/SignOut.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/components/login/Login.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/components/login/LoginForm.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/components/shared/Modal.css">
+
+    <title>Demo Shop</title>
+</head>
+<body>
+<div class="App">
+    <header class="App-header"><img id="App-logo" src="./images/logo.svg"/>
+        <div class="SignOut-wrapper"><span class="SignOut-username">Hello, <i> John_Doe</i></span><img id="SignOut-icon"
+                                                                                                       src="./images/header-logout.svg"/>
+        </div>
+    </header>
+    <main class="App-main"></main>
+    <footer class="App-footer">Copyright &quot;<u>Demo Shop</u>&quot;, 2017</footer>
+</div>
+
+<div class="Login-wrapper">
+    <div class="Modal-back"></div>
+    <div class="Modal-wrapper">
+        <div class="Modal-title">Login to &quot;Demo Shop&quot;</div>
+        <div class="Modal-content">
+            <div class="LoginForm-wrapper">Your login:<input class="LoginForm-loginField" pattern="[A-Za-z]{6,15}"
+                                                             minLength="6"/>Your password:<input type="password"
+                                                                                                 class="LoginForm-passwordField"
+                                                                                                 minLength="6"/>
+                <button class="LoginForm-submit" type="submit">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

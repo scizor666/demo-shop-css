@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+
+    <link rel="stylesheet" type="text/css" href="./assets/css/App.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/components/login/SignOut.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/components/products/ProductDisplay.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/components/products/Rating.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/components/products/ProductEditModal.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/components/shared/Modal.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/components/shared/ConfirmButtons.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/components/products/ProductPrice.css">
+
+    <script type="text/javascript" src="./utils.js"></script>
+
+    <title>Demo Shop</title>
+</head>
+<body>
+<div class="App">
+    <header class="App-header"><img id="App-logo" src="./images/logo.svg"/>
+        <div class="SignOut-wrapper"><span class="SignOut-username">Hello, <i> John_Doe</i></span><img id="SignOut-icon"
+                                                                                                       src="./images/header-logout.svg"/>
+        </div>
+    </header>
+    <main class="App-main">
+        <div>
+            <div class="App-shadow"></div>
+            <div class="ProductDisplay-wrapper">
+                <div class="ProductDisplay-nav"><a>Back</a><label>Category: <b>Man / Active Wear</b></label></div>
+                <div class="ProductDisplay-card">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="ProductDisplay-ratedImage"><img class="ProductDisplay-image"
+                                                                        src="./images/2.jpg"
+                                                                        alt="No Picture found"/>
+                                <div class="Rating-wrapper"><i class="Rating-star_full"></i><i
+                                        class="Rating-star_blank"></i><i class="Rating-star_blank"></i><i
+                                        class="Rating-star_blank"></i><i class="Rating-star_blank"></i></div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6"><h2 class="ProductDisplay-name">Active Coat Lorem 2</h2>
+                            <div class="ProductDisplay-details">
+                                <div class="ProductDisplay-description">Auribus teneo lupum, nam neque quomodo a me
+                                    amittam invenio neque uti retineam scio.
+                                    <div class="ProductDisplay-adminActions">You can <a href="javascript:void(0);">add 5
+                                        more</a>. You can also <a onclick="togglePopup('editModal')">edit details</a>
+                                        or <a
+                                                onclick="togglePopup('deleteModal')">delete</a> them.
+                                    </div>
+                                </div>
+                                <div class="ProductDisplay-buy">
+                                    <div><span class="ProductPrice-wrapper">
+                                        <span class="ProductPrice-currency">$</span>57.35</span>
+                                        <span> (1 day left)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="App-footer">Copyright &quot;<u>Demo Shop</u>&quot;, 2017</footer>
+</div>
+
+<div class="ProductEdit-wrapper" id="editModal" style="display: none;">
+    <div class="Modal-back"></div>
+    <div class="Modal-wrapper">
+        <div class="Modal-title">Edit &quot;Active Coat Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing
+            Elit.3&quot;
+        </div>
+        <div class="Modal-content">
+            <div class="row">
+                <div class="col col-xs-12 col-sm-6">
+                    <div class="ProductEdit-fields">
+                        <div class="ProductEdit-inputGroup"><label class="ProductEdit-inputLabel">Name:</label><input
+                                class="ProductEdit-field" placeholder="Please enter name..."/></div>
+                        <div class="ProductEdit-inputGroup"><label
+                                class="ProductEdit-inputLabel">Category:</label><select class="ProductEdit-select">
+                            <option value="activeWear">Active Wear</option>
+                            <option value="dresses">Dresses</option>
+                            <option value="jeans">Jeans</option>
+                            <option value="coats">Coats</option>
+                        </select></div>
+                        <div class="ProductEdit-inputGroup"><label class="ProductEdit-inputLabel">Size:</label>
+                            <div class="DemoShop-radioOptionWrapper"><label><input type="radio" id="ProductEdit-sizeman"
+                                                                                   class="DemoShop-radioInput"
+                                                                                   name="size" value="man"/><label
+                                    for="ProductEdit-sizeman"
+                                    class="DemoShop-radioLabel">Man</label></label><label><input type="radio"
+                                                                                                 id="ProductEdit-sizewoman"
+                                                                                                 class="DemoShop-radioInput"
+                                                                                                 name="size"
+                                                                                                 value="woman"/><label
+                                    for="ProductEdit-sizewoman" class="DemoShop-radioLabel">Woman</label></label><label><input
+                                    type="radio" id="ProductEdit-sizeunisex" class="DemoShop-radioInput" name="size"
+                                    value="unisex"/><label for="ProductEdit-sizeunisex" class="DemoShop-radioLabel">Unisex</label></label>
+                            </div>
+                        </div>
+                        <div class="ProductEdit-descriptionWrapper"><label
+                                class="ProductEdit-inputLabel">Description:</label><textarea></textarea></div>
+                    </div>
+                </div>
+                <div class="col col-xs-12 col-sm-6">
+                    <div class="ProductEdit-fields">
+                        <div class="ProductEdit-inputGroup"><label class="ProductEdit-inputLabel">Link to image:</label><input
+                                type="url" class="ProductEdit-field" placeholder="Please enter link to image..."
+                                pattern="^https?\://.+$"/></div>
+                        <div class="ProductEdit-inputGroup"><img class="DemoShop-image" src="./images/2.jpg"/></div>
+                        <div class="ProductEdit-inputGroup"><label class="ProductEdit-inputLabel">Price:</label><input
+                                type="number" class="ProductEdit-field" min="1" step="any"
+                                placeholder="Please enter price..."/></div>
+                        <div class="ProductEdit-inputGroup"><label class="ProductEdit-inputLabel">Rating:</label><select
+                                class="ProductEdit-select">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select></div>
+                    </div>
+                </div>
+            </div>
+            <div class="ConfirmButtons-wrapper">
+                <button class="DemoShop-button_bigSecondary" onclick="togglePopup('editModal')">Cancel</button>
+                <button class="DemoShop-button_big" onclick="togglePopup('editModal')">Confirm</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="deleteModal" style="display: none;">
+    <div class="Modal-back"></div>
+    <div class="Modal-wrapper">
+        <div class="Modal-title">Are you sure?</div>
+        <div class="Modal-content">
+            <div class="ProductDisplay-DeleteModalText"><span>You are trying to delete this product.</span>
+                <div>Are you sure you want this?</div>
+            </div>
+            <div class="ConfirmButtons-wrapper">
+                <button class="DemoShop-button_bigSecondary" onclick="togglePopup('deleteModal')">Cancel</button>
+                <button class="DemoShop-button_big" onclick="togglePopup('deleteModal')">Confirm</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+
+
+
+

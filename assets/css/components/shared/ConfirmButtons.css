@@ -1,0 +1,11 @@
+.ConfirmButtons-wrapper {
+  display: flex;
+  justify-content: center; }
+
+@media screen and (min-width: 800px) {
+  .ConfirmButtons-wrapper {
+    justify-content: flex-end; } }
+.DemoShop-button_bigSecondary {
+  margin-right: 20px; }
+
+/*# sourceMappingURL=ConfirmButtons.css.map */

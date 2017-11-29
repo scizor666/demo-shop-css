@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+
+    <link rel="stylesheet" type="text/css" href="./assets/css/App.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/components/login/SignOut.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/components/products/ProductDisplay.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/components/products/Rating.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/components/shared/ConfirmButtons.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/components/shared/Modal.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/components/products/ProductPrice.css">
+
+    <script type="text/javascript" src="./utils.js"></script>
+
+    <title>Demo Shop</title>
+</head>
+<body>
+<div class="App">
+    <header class="App-header"><img id="App-logo" src="./images/logo.svg"/>
+        <div class="SignOut-wrapper"><span class="SignOut-username">Hello, <i> John_Doe</i></span><img id="SignOut-icon"
+                                                                                                       src="./images/header-logout.svg"/>
+        </div>
+    </header>
+    <main class="App-main">
+        <div>
+            <div class="App-shadow"></div>
+            <div class="ProductDisplay-wrapper">
+                <div class="ProductDisplay-nav"><a>Back</a><label>Category: <b>Man / Active Wear</b></label></div>
+                <div class="ProductDisplay-card">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="ProductDisplay-ratedImage"><img class="ProductDisplay-image" src="./images/3.jpg"
+                                                                        alt="No Picture found"/>
+                                <div class="Rating-wrapper"><i class="Rating-star_full"></i><i
+                                        class="Rating-star_full"></i><i class="Rating-star_blank"></i><i
+                                        class="Rating-star_blank"></i><i class="Rating-star_blank"></i></div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6"><h2 class="ProductDisplay-name">Active Coat Lorem 1</h2>
+                            <div class="ProductDisplay-details">
+                                <div class="ProductDisplay-description">Auribus teneo lupum, nam neque quomodo a me
+                                    amittam invenio neque uti retineam scio.
+                                </div>
+                                <div class="ProductDisplay-buy">
+                                    <div><span class="ProductPrice-wrapper"><span class="ProductPrice-currency">$</span>90.88</span>
+                                    </div>
+                                    <div>
+                                        <button onclick="togglePopup('buyModal')" class="DemoShop-button">Buy</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="App-footer">Copyright &quot;<u>Demo Shop</u>&quot;, 2017</footer>
+</div>
+
+<div class="ProductDisplay-buyModal" id="buyModal" style="display: none;">
+    <div class="Modal-back"></div>
+    <div class="Modal-wrapper">
+        <div class="Modal-title">Thank you!</div>
+        <div class="Modal-content">
+            <div class="ProductDisplay-BuyModalText">You successfully purchased this item.</div>
+            <div class="ProductDisplay-buyModalButtonWrapper">
+                <button class="DemoShop-button_big" onclick="togglePopup('buyModal')">Continue shopping</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

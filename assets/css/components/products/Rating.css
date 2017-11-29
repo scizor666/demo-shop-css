@@ -1,0 +1,25 @@
+.Rating-wrapper {
+  background-color: rgba(0, 0, 0, 0.75);
+  height: 30px;
+  width: 100%;
+  display: block;
+  padding: 5px 0 0 20px;
+  font-size: 1rem;
+  position: absolute;
+  box-sizing: border-box;
+  bottom: 0; }
+
+.Rating-star, .Rating-star_full, .Rating-star_blank {
+  margin-right: 3px;
+  width: 18px;
+  height: 18px;
+  background-size: contain;
+  display: inline-block; }
+
+.Rating-star_full {
+  background-image: url("../../../../images/star-active.svg"); }
+
+.Rating-star_blank {
+  background-image: url("../../../../images/star-inactive.svg"); }
+
+/*# sourceMappingURL=Rating.css.map */

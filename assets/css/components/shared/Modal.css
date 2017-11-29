@@ -1,0 +1,51 @@
+.Modal-back {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.3); }
+
+.Modal-wrapper {
+  min-width: 480px;
+  max-width: 730px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-height: 95%;
+  border-radius: 15px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5); }
+
+.Modal-title {
+  background-color: #ffffff;
+  border-radius: 10px 10px 0 0;
+  padding: 25px 40px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  color: #000000;
+  font-family: "PT Sans Caption", sans-serif;
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 30px;
+  text-align: center;
+  height: 70px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.11); }
+
+.Modal-content {
+  padding: 40px 60px 30px;
+  text-align: center;
+  font-size: 24px;
+  line-height: 32px;
+  background-image: url("../../../../images/modal-bg.png");
+  overflow-wrap: break-word;
+  overflow: hidden;
+  border-radius: 0 0 10px 10px; }
+
+@media screen and (min-width: 800px) {
+  .Modal-content {
+    padding: 40px 30px 30px; } }
+
+/*# sourceMappingURL=Modal.css.map */

@@ -1,0 +1,269 @@
+[type="radio"]:checked,
+[type="radio"]:not(:checked) {
+  display: none; }
+
+[type="radio"] + label {
+  position: relative;
+  padding-left: 28px;
+  cursor: pointer;
+  line-height: 25px;
+  display: inline-block;
+  font-size: 14px; }
+
+[type="radio"] + label:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 24px;
+  height: 24px;
+  border: 1px solid #288575;
+  border-radius: 25px;
+  background: #ffffff; }
+
+[type="radio"] + label:after {
+  content: '';
+  width: 20px;
+  height: 20px;
+  background: #288575;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  border-radius: 100%;
+  transition: all 0.2s ease; }
+
+[type="radio"]:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0); }
+
+[type="radio"]:checked + label:after {
+  opacity: 1;
+  transform: scale(1); }
+
+[type="radio"]:checked + label {
+  color: #288575; }
+
+.DemoShop-radioOptionWrapper {
+  display: block;
+  width: 100%;
+  white-space: nowrap; }
+
+.DemoShop-radioLabel {
+  padding-right: 10px;
+  display: inline-block; }
+
+.DemoShop-radioInput {
+  display: inline-block;
+  margin-right: 5px; }
+
+.DemoShop-switch {
+  position: relative;
+  display: inline-block;
+  width: 42px;
+  height: 24px;
+  vertical-align: middle;
+  text-align: center;
+  cursor: pointer; }
+
+.DemoShop-switch input {
+  display: none; }
+
+.DemoShop-switch .DemoShop-switchLabel {
+  padding-left: 46px;
+  color: #000000;
+  font-size: 14px;
+  line-height: 25px;
+  white-space: nowrap;
+  vertical-align: middle; }
+
+.DemoShop-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ffffff;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 34px;
+  border: 1px solid #288575; }
+
+.DemoShop-slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 1px;
+  bottom: 1px;
+  background-color: #288575;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 50%; }
+
+input:checked + .DemoShop-slider {
+  background-color: #288575; }
+
+input:focus + .DemoShop-slider {
+  box-shadow: 0 0 1px #288575; }
+
+input:checked + .DemoShop-slider:before {
+  -webkit-transform: translateX(18px);
+  -ms-transform: translateX(18px);
+  transform: translateX(18px);
+  background-color: #ffffff; }
+
+.DemoShop-switch input:checked ~ .DemoShop-switchLabel {
+  color: #288575; }
+
+.DemoShop-field {
+  border-radius: 5px;
+  border: 3px solid transparent;
+  line-height: 32px;
+  outline: none;
+  box-sizing: border-box;
+  padding: 0 10px;
+  font-family: "PT Sans", sans-serif;
+  font-size: 14px;
+  text-overflow: ellipsis; }
+
+.DemoShop-field:focus {
+  border-color: rgba(40, 133, 117, 0.3); }
+
+.DemoShop-field:invalid {
+  border-color: #ff5b51; }
+
+.DemoShop-fieldIcon {
+  position: absolute;
+  left: calc(100% - 20px);
+  color: #a9a9a9; }
+
+.DemoShop-button, .DemoShop-button_big, .DemoShop-button_secondary, .DemoShop-button_bigSecondary, .ProductCard-button {
+  height: 35px;
+  border-radius: 5px;
+  border-width: 0;
+  background: linear-gradient(180deg, #2BBCC2 0%, #1B745F 100%);
+  color: #ffffff;
+  font-family: "PT Sans", sans-serif;
+  font-size: 14px;
+  line-height: 19px;
+  text-align: center;
+  width: 120px;
+  outline: none; }
+
+.DemoShop-button_big {
+  height: 50px;
+  width: 170px;
+  font-family: "PT Sans Caption", sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 23px; }
+
+.DemoShop-button_secondary {
+  background: linear-gradient(180deg, #B1B1B1 0%, #777777 100%); }
+
+.DemoShop-button_bigSecondary {
+  height: 50px;
+  width: 170px;
+  font-family: "PT Sans Caption", sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 23px;
+  background: linear-gradient(180deg, #B1B1B1 0%, #777777 100%); }
+
+.DemoShop-button:active, .DemoShop-button_big:active, .DemoShop-button_secondary:active, .DemoShop-button_bigSecondary:active, .ProductCard-button:active {
+  background: linear-gradient(0deg, #2BBCC2 100%, #1B745F 0%);
+  box-shadow: inset 2px 2px 4px 0 rgba(0, 0, 0, 0.3); }
+
+.DemoShop-button_secondary:active {
+  background: linear-gradient(0deg, #B1B1B1 0%, #777777 100%);
+  box-shadow: inset 2px 2px 4px 0 rgba(0, 0, 0, 0.5); }
+
+.DemoShop-button:disabled, .DemoShop-button_big:disabled, .DemoShop-button_secondary:disabled, .DemoShop-button_bigSecondary:disabled, .ProductCard-button:disabled,
+.DemoShop-button[disabled],
+[disabled].DemoShop-button_big,
+[disabled].DemoShop-button_secondary,
+[disabled].DemoShop-button_bigSecondary,
+[disabled].ProductCard-button {
+  opacity: .5; }
+
+.DemoShop-select {
+  width: 100%;
+  display: block;
+  font-size: 14px;
+  line-height: 19px;
+  height: 35px;
+  border-radius: 5px;
+  border: 0;
+  padding: 0 42px 0 17px;
+  background: url("../../../../images/down2.svg") no-repeat calc(100% - 10px) #ffffff;
+  background-size: 24px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none; }
+
+select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #000; }
+
+a {
+  color: #288575; }
+
+.DemoShop-image {
+  width: 100%; }
+
+textarea {
+  border: 2px solid transparent;
+  outline: none;
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box; }
+
+textarea:focus {
+  border-color: rgba(40, 133, 117, 0.3); }
+
+.ProductCard-wrapper {
+  min-width: calc(120px + 100px);
+  display: flex;
+  flex-flow: column;
+  flex: 1; }
+
+.ProductCard-imageContainer {
+  position: relative;
+  width: 100%; }
+
+.ProductCard-image {
+  width: 100%;
+  display: block; }
+
+.ProductCard-title {
+  font-size: 18px;
+  font-weight: bold;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: solid;
+  border-color: #288575;
+  border-width: 2px; }
+
+.ProductCard-data {
+  background-image: url("../../../../images/modal-bg.png");
+  padding: 20px;
+  position: relative;
+  padding-bottom: calc(20px * 2 + 35px);
+  flex: 1; }
+
+.ProductCard-description {
+  font-size: 14px; }
+
+.ProductCard-button {
+  position: absolute;
+  right: 20px;
+  bottom: 15px; }
+
+.ProductCard-price {
+  position: absolute;
+  bottom: 15px;
+  left: 20px; }
+
+/*# sourceMappingURL=ProductCard.css.map */
