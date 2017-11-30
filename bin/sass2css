@@ -16,5 +16,3 @@ sass -r sass-globbing --update -f "$script_dir"/../sass:"$script_dir"/../assets/
 for i in "$script_dir"/../assets/css/components/*/*css; do sed -i '' -e 's#"/images#"../../../../images#g' "$i"; done
 
 sed -i '' -e 's#"/images#"../../images#g' "$script_dir"/../assets/css/App.css
-
-sed -i '' -e '1s#^#@import "rc-slider.css";#' "$script_dir"/../assets/css/components/filter/FilterModal.css

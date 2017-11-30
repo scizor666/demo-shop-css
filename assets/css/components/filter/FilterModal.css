@@ -1,4 +1,4 @@
-@import "rc-slider.css";[type="radio"]:checked,
+[type="radio"]:checked,
 [type="radio"]:not(:checked) {
   display: none; }
 
