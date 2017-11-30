@@ -1,0 +1,24 @@
+@import "../shared/shared";
+
+.ProductList-wrapper {
+  @include main-wrapper;
+  padding-bottom: $footer-height;
+
+  & > .container-fluid {
+    padding: 0;
+  }
+
+  & .row {
+    display: flex;
+    flex-wrap: wrap;
+
+    & > div {
+      display: flex;
+      flex-flow: column;
+    }
+  }
+}
+
+.ProductList-item {
+  margin-bottom: 30px;
+}

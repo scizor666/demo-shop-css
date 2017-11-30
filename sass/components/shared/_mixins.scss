@@ -1,0 +1,7 @@
+@mixin main-wrapper {
+  margin: 0 auto;
+  max-width: 1200px;
+  min-width: 480px;
+  min-height: 100%;
+  padding: 15px 30px 30px + $footer-height 30px;
+}

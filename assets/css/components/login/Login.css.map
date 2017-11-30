@@ -1,7 +1,7 @@
 {
 "version": 3,
 "mappings": "AAAA,6BAA8B;EAC5B,SAAS,EAAE,KAAK;EAChB,4CAAe;IACb,UAAU,EAAE,IAAI;IAChB,OAAO,EAAE,IAAI",
-"sources": ["../../../../../demo-shop/src/components/login/Login.scss"],
+"sources": ["../../../../sass/components/login/Login.scss"],
 "names": [],
 "file": "Login.css"
 }

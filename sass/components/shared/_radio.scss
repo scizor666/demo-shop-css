@@ -1,0 +1,69 @@
+@import "variables";
+
+[type="radio"]:checked,
+[type="radio"]:not(:checked) {
+  display: none;
+}
+
+[type="radio"] + label {
+  position: relative;
+  padding-left: 28px;
+  cursor: pointer;
+  line-height: 25px;
+  display: inline-block;
+  font-size: 14px;
+}
+
+[type="radio"] + label:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 24px;
+  height: 24px;
+  border: 1px solid $main-color;
+  border-radius: 25px;
+  background: $white-color;
+}
+
+[type="radio"] + label:after {
+  content: '';
+  width: 20px;
+  height: 20px;
+  background: $main-color;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  border-radius: 100%;
+  transition: all 0.2s ease;
+}
+
+[type="radio"]:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0);
+}
+
+[type="radio"]:checked + label:after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+[type="radio"]:checked + label {
+  color: $main-color;
+}
+
+.DemoShop-radioOptionWrapper {
+  display: block;
+  width: 100%;
+  white-space:nowrap;
+}
+
+.DemoShop-radioLabel {
+  padding-right: 10px;
+  display: inline-block;
+}
+
+.DemoShop-radioInput {
+  display: inline-block;
+  margin-right: 5px;
+}

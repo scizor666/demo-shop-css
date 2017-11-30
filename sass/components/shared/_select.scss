@@ -1,0 +1,23 @@
+.DemoShop-select {
+  $select-width: 100%;
+  width: 100%;
+  display: block;
+  font-size: 14px;
+  line-height: 19px;
+  height: 35px;
+  border-radius: 5px;
+  border: 0;
+  padding: 0 42px 0 17px;
+  background: url("/images/down2.svg") no-repeat calc(#{$select-width} - 10px) $white-color;
+  background-size: 24px;
+  //reset
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance:none;
+  outline: none;
+}
+
+select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #000;
+}

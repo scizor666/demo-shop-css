@@ -1,0 +1,75 @@
+$switch-width: 42px;
+$switch-height: 24px;
+
+$slider-handle-padding: 2px;
+$slider-handle-size: $switch-height - $slider-handle-padding * 2;
+$slider-border-size: 1px;
+
+.DemoShop-switch {
+  position: relative;
+  display: inline-block;
+  width: $switch-width;
+  height: $switch-height;
+  vertical-align:middle;
+  text-align: center;
+  cursor: pointer;
+}
+
+.DemoShop-switch input {
+  display:none;
+}
+
+.DemoShop-switch .DemoShop-switchLabel {
+  padding-left: $switch-width + $slider-handle-padding * 2;
+  color: #000000;
+  font-size: 14px;
+  line-height: 25px;
+  white-space: nowrap;
+  vertical-align:middle;
+}
+
+.DemoShop-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $white-color;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 34px;
+  border: $slider-border-size solid $main-color;
+}
+
+.DemoShop-slider:before {
+  position: absolute;
+  content: "";
+  height: $slider-handle-size;
+  width: $slider-handle-size;
+  left: $slider-handle-padding - $slider-border-size;
+  bottom: $slider-handle-padding - $slider-border-size;
+  background-color: $main-color;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .DemoShop-slider {
+  background-color: $main-color;
+}
+
+input:focus + .DemoShop-slider {
+  box-shadow: 0 0 1px $main-color;
+}
+
+input:checked + .DemoShop-slider:before {
+  $transition-x: $switch-width - $slider-handle-padding * 2  - $slider-handle-size;
+  -webkit-transform: translateX($transition-x);
+  -ms-transform: translateX($transition-x);
+  transform: translateX($transition-x);
+  background-color: $white-color;
+}
+
+.DemoShop-switch input:checked ~ .DemoShop-switchLabel {
+  color: $main-color;
+}

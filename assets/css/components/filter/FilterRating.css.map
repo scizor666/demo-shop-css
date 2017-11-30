@@ -1,7 +1,7 @@
 {
 "version": 3,
 "mappings": "AAAA,qBAAsB;EACpB,SAAS,EAAE,KAAK;EAChB,aAAa,EAAE,IAAI",
-"sources": ["../../../../../demo-shop/src/components/filter/FilterRating.scss"],
+"sources": ["../../../../sass/components/filter/FilterRating.scss"],
 "names": [],
 "file": "FilterRating.css"
 }

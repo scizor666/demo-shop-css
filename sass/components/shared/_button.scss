@@ -1,0 +1,57 @@
+.DemoShop-button {
+  height: $button-height;
+  border-radius: 5px;
+  border-width: 0;
+  background: linear-gradient(180deg, #2BBCC2 0%, #1B745F 100%);
+  color: #ffffff;
+  font-family: "PT Sans", sans-serif;
+  font-size: 14px;
+  line-height: 19px;
+  text-align: center;
+  width: $button-width;
+  outline: none;
+}
+
+@mixin big {
+  height: $big-button-height;
+  width: $big-button-width;
+  font-family: "PT Sans Caption", sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 23px;
+}
+
+.DemoShop-button_big {
+  @extend .DemoShop-button;
+  @include big;
+}
+
+@mixin secondary {
+  background: linear-gradient(180deg, #B1B1B1 0%, #777777 100%);
+}
+
+.DemoShop-button_secondary {
+  @extend .DemoShop-button;
+  @include secondary;
+}
+
+.DemoShop-button_bigSecondary {
+  @extend .DemoShop-button;
+  @include big;
+  @include secondary;
+}
+
+.DemoShop-button:active {
+  background: linear-gradient(0deg, #2BBCC2 100%, #1B745F 0%);
+  box-shadow: inset 2px 2px 4px 0 rgba(0,0,0,0.3);
+}
+
+.DemoShop-button_secondary:active {
+  background: linear-gradient(0deg, #B1B1B1 0%, #777777 100%);
+  box-shadow: inset 2px 2px 4px 0 rgba(0,0,0,0.5);
+}
+
+.DemoShop-button:disabled,
+.DemoShop-button[disabled] {
+  opacity: .5;
+}

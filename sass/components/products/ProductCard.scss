@@ -1,0 +1,56 @@
+@import '../shared/shared';
+
+$data-padding: 20px;
+$data-margin: 10px;
+
+.ProductCard-wrapper {
+  min-width: calc(#{$button-width} + 100px);
+  display: flex;
+  flex-flow: column;
+  flex: 1;
+}
+
+.ProductCard-imageContainer {
+  position: relative;
+  width: 100%;
+}
+
+.ProductCard-image {
+  width: 100%;
+  display: block;
+}
+
+.ProductCard-title {
+  font-size: 18px;
+  font-weight: bold;
+  padding-bottom: $data-padding/2;
+  margin-bottom: $data-margin;
+  border-bottom: solid;
+  border-color: $main-color;
+  border-width: 2px;
+}
+
+.ProductCard-data {
+  background-image: url("/images/modal-bg.png");
+  padding: $data-padding;
+  position: relative;
+  padding-bottom: calc(#{$data-padding} * 2 + #{$button-height});
+  flex: 1;
+}
+
+.ProductCard-description {
+  font-size: 14px;
+}
+
+.ProductCard-button {
+  @extend .DemoShop-button;
+  position: absolute;
+  right: $data-padding;
+  bottom: 15px;
+}
+
+.ProductCard-price {
+  position: absolute;
+  bottom: 15px;
+  left: $data-padding;
+}

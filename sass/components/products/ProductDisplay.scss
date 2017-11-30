@@ -1,0 +1,124 @@
+@import "../shared/shared";
+
+$name-size: 24px;
+$description-border-size: 2px;
+$name-margin-size: 10px;
+
+.ProductDisplay-wrapper {
+  @include main-wrapper;
+  & .row > div {
+    display: flex;
+    flex-flow: column;
+  }
+}
+
+.ProductDisplay-nav {
+  margin: 0 auto;
+  padding: 0 0 20px;
+  display: flex;
+  justify-content: space-between;
+  color: $white-color;
+  font-size: 16px;
+
+  a {
+    color: $white-color;
+    text-decoration: underline;
+    font-size: 16px;
+    font-weight: bold;
+  }
+}
+
+.ProductDisplay-image {
+  width: 100%;
+}
+
+.ProductDisplay-ratedImage {
+  display: block;
+  padding: 0;
+  position: relative;
+}
+
+.ProductDisplay-card {
+  background-image: url("/images/modal-bg.png");
+  padding: 20px;
+  width: 100%;
+  margin: 0;
+
+  & > .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+
+    & > div {
+      padding: 0;
+    }
+    & > div:first-child {
+      padding-bottom: 20px;
+    }
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .ProductDisplay-card .row > div:first-child {
+    padding-right: 20px;
+    padding-bottom: 0;
+  }
+
+  .ProductDisplay-buy {
+    border-top: 1px solid #D6D6D6;
+  }
+}
+
+.ProductDisplay-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100% - #{$name-size} - #{$name-margin-size} - #{$description-border-size});
+}
+
+.ProductDisplay-name {
+  margin: 0 0 $name-margin-size 0;
+  font-size: $name-size;
+  line-height: 32px;
+}
+
+.ProductDisplay-description {
+  border-top: $description-border-size solid #3FC5CB;
+  padding-top: 15px;
+}
+
+.ProductDisplay-buy {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+}
+
+.ProductDisplay-notAvailable {
+  color: #c11313;
+}
+
+.ProductDisplay-adminActions {
+  padding-top: 20px;
+}
+
+.ProductDisplay-DeleteModalText {
+  padding: 0 30px 40px;
+}
+
+.ProductDisplay-BuyModalText {
+  padding: 0 50px 40px;
+}
+
+.ProductDisplay-buyModal {
+  .ProductDisplay-buyModalButtonWrapper {
+    display: flex;
+    justify-content: flex-end;
+
+    .DemoShop-button_big {
+      width: 220px;
+    }
+  }
+  .Modal-content {
+    padding: 40px 30px 30px;
+  }
+}

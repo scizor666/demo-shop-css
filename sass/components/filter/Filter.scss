@@ -1,0 +1,22 @@
+@import "../shared/shared";
+
+.Filter-wrapper {
+  padding-bottom: 25px;
+  position: relative;
+}
+
+.Filter-wrapper .DemoShop-button {
+  margin-right: 15px;
+  width: 140px;
+}
+
+.Filter-button {
+  @extend .DemoShop-button;
+  box-shadow: inset 2px 2px 4px 0 rgba(0,0,0,0.3);
+}
+
+@media screen and (min-width: 800px) {
+  .Filter-wrapper {
+    text-align: right;
+  }
+}

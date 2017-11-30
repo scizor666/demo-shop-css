@@ -1,0 +1,25 @@
+.DemoShop-field {
+  border-radius: 5px;
+  border: 3px solid transparent;
+  line-height: 32px;
+  outline: none;
+  box-sizing: border-box;
+  padding: 0 10px;
+  font-family: "PT Sans", sans-serif;
+  font-size: 14px;
+  text-overflow: ellipsis;
+}
+
+.DemoShop-field:focus {
+  border-color: transparentize($main-color, .7);
+}
+
+.DemoShop-field:invalid {
+  border-color: $invalid-color;
+}
+
+.DemoShop-fieldIcon {
+  position: absolute;
+  left: calc(100% - 20px);
+  color: $inactive-color;
+}
