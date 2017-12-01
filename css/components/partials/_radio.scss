@@ -35,7 +35,7 @@
   top: 2px;
   left: 2px;
   border-radius: 100%;
-  transition: all 0.2s ease;
+  //transition: all 0.2s ease; safari corrupts the border of :before with this effect
 }
 
 [type="radio"]:not(:checked) + label:after {
