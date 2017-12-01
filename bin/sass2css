@@ -1,18 +1,16 @@
 #!/usr/bin/env bash
 
-if [[ $(gem list -i "^sass-globbing$") = 'true' ]]; then
-    echo "sass-globbing is ready to use"
+if [[ $(gem list -i "^sass$") = 'true' ]]; then
+    echo "sass is ready to use"
 else
-    gem install sass-globbing
-    echo "sass-globbing is ready to use"
+    gem install sass
+    echo "sass is ready to use"
 fi
 
 script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-sass -r sass-globbing --update -f "$script_dir"/../sass:"$script_dir"/../assets/css
+sass --update -f "$script_dir"/../css/index.scss
 
-# fix relative paths and imports
+# fix relative paths
 
-for i in "$script_dir"/../assets/css/components/*/*css; do sed -i '' -e 's#"/images#"../../../../images#g' "$i"; done
-
-sed -i '' -e 's#"/images#"../../images#g' "$script_dir"/../assets/css/App.css
+sed -i '' -e 's#"/images#"../images#g' "$script_dir"/../css/index.css

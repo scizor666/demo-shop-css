@@ -1,0 +1,32 @@
+
+.Statistics-wrapper {
+  @include main-wrapper;
+  padding-top: 20px;
+  display: flex;
+  flex-flow: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+
+  @media screen and (min-width: 800px) {
+    flex-flow: row;
+    justify-content: center;
+  }
+}
+
+.Statistics-image {
+  max-width: 100%;
+  min-width: 0;
+  width: 100%;
+  align-self: flex-start;
+
+  &:first-child {
+    margin-bottom: 20px;
+  }
+
+  @media screen and (min-width: 800px) {
+    &:first-child {
+      margin-right: 10px;
+      margin-bottom: 0;
+    }
+  }
+}

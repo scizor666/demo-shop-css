@@ -1,0 +1,87 @@
+
+.FilterModal-wrapper {
+  background-color: $white-color;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  text-align: left;
+  padding: 20px;
+  z-index: 100;
+  position: absolute;
+  margin-top: 12px;
+  min-width: 100%;
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+  }
+
+  .row > div {
+    border-bottom: 0.5px solid $main-color;
+    padding-bottom: 25px;
+    margin-bottom: 10px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .row:last-child > div:last-child {
+    border-color: transparent;
+    margin-bottom: 0;
+  }
+}
+
+.FilterModal-arrowUp {
+  width: 0;
+  height: 0;
+  margin-left: 55px;
+  position: absolute;
+  margin-top: 4px;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid $white-color;
+  z-index: 110;
+}
+
+@media screen and (min-width: 800px) {
+  .FilterModal-wrapper {
+    min-width: 750px;
+    right: 0;
+
+    .row > div {
+      padding-bottom: 10px;
+
+      &:not(:last-child) {
+        padding-right: 15px;
+      }
+    }
+
+    .row:not(:first-child) > div {
+      border-color: transparent;
+    }
+
+    .row:last-child > div {
+      margin-bottom: 0;
+    }
+  }
+
+  .FilterModal-arrowUp {
+    right: 305px;
+  }
+}
+
+.FilterModal-availabilityOption {
+  display: block !important;
+}
+
+.FilterModal-categorySelect {
+  @extend .DemoShop-select;
+  background: url("/images/down.svg") no-repeat $main-color;
+  background-size: 24px;
+  background-position: 203px;
+  width: 235px;
+}
+
+.FilterModal-filterName {
+  font-size: 12px;
+  line-height: 15px;
+}

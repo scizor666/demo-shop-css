@@ -2,12 +2,11 @@
 
 # educational HTML-CSS project 
 
-This project is alsmost completely scracthed out from https://github.com/scizor666/demo-shop
+This project is almost completely scratched out from https://github.com/scizor666/demo-shop
 
 To compile css from scss using in-built utils you must have the following tools installed:
 * ruby 
-* sass gem 
-* sass-globbing gem 
+* sass gem  
 
 the command ./bin/sass2css from the project root wil do the trick.
 
