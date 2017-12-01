@@ -1,0 +1,75 @@
+.DemoShop-range {
+  position: relative;
+  height: 14px;
+  padding: 5px 0;
+  width: 100%;
+  border-radius: 6px;
+  -ms-touch-action: none;
+  touch-action: none;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.DemoShop-rangeHandle {
+  position: absolute;
+  cursor: pointer;
+  cursor: -webkit-grab;
+  cursor: grab;
+  border-radius: 50%;
+  -ms-touch-action: pan-x;
+  touch-action: pan-x;
+  margin-left: -10px;
+  margin-top: -8px;
+  width: 20px;
+  height: 20px;
+  background-color: #288575;
+  border: none;
+}
+
+.DemoShop-rangeRail {
+  position: absolute;
+  width: 100%;
+  border-radius: 6px;
+  height: 0;
+  border: 2px solid #B8B8B8;
+}
+
+.DemoShop-rangeTrack {
+  position: absolute;
+  left: 0;
+  height: 4px;
+  border-radius: 6px;
+  border: 2px solid #288575;
+}
+
+.DemoShop-rangeHandle {
+  position: absolute;
+  cursor: pointer;
+  cursor: -webkit-grab;
+  cursor: grab;
+  border-radius: 50%;
+  -ms-touch-action: pan-x;
+  touch-action: pan-x;
+  margin-left: -10px;
+  margin-top: -8px;
+  width: 20px;
+  height: 20px;
+  background-color: #288575;
+  border: none;
+}
+
+.DemoShop-rangeMark {
+  position: absolute;
+  top: 18px;
+  left: 0;
+  width: 100%;
+  font-size: 12px;
+}
+
+.DemoShop-rangeMarkText {
+  position: absolute;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  cursor: pointer;
+}
