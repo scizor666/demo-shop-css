@@ -13,11 +13,11 @@
   //reset
   -webkit-appearance: none;
   -moz-appearance: none;
-  appearance:none;
+  appearance: none;
   outline: none;
-}
 
-select:-moz-focusring {
-  color: transparent;
-  text-shadow: 0 0 0 #000;
+  &:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #000;
+  }
 }

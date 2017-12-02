@@ -1,9 +1,9 @@
-[type="radio"]:checked,
-[type="radio"]:not(:checked) {
+.DemoShop-radioOptionWrapper [type="radio"]:checked,
+.DemoShop-radioOptionWrapper [type="radio"]:not(:checked) {
   display: none;
 }
 
-[type="radio"] + label {
+.DemoShop-radioOptionWrapper [type="radio"] + label {
   position: relative;
   padding-left: 28px;
   cursor: pointer;
@@ -12,7 +12,7 @@
   font-size: 14px;
 }
 
-[type="radio"] + label:before {
+.DemoShop-radioOptionWrapper [type="radio"] + label:before {
   content: '';
   position: absolute;
   left: 0;
@@ -24,7 +24,7 @@
   background: $white-color;
 }
 
-[type="radio"] + label:after {
+.DemoShop-radioOptionWrapper [type="radio"] + label:after {
   content: '';
   width: 20px;
   height: 20px;
@@ -36,17 +36,17 @@
   //transition: all 0.2s ease; safari corrupts the border of :before with this effect
 }
 
-[type="radio"]:not(:checked) + label:after {
+.DemoShop-radioOptionWrapper [type="radio"]:not(:checked) + label:after {
   opacity: 0;
   transform: scale(0);
 }
 
-[type="radio"]:checked + label:after {
+.DemoShop-radioOptionWrapper [type="radio"]:checked + label:after {
   opacity: 1;
   transform: scale(1);
 }
 
-[type="radio"]:checked + label {
+.DemoShop-radioOptionWrapper [type="radio"]:checked + label {
   color: $main-color;
 }
 

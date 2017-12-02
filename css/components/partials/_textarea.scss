@@ -1,12 +1,13 @@
-textarea {
+.DemoShop-textarea {
   border: 2px solid transparent;
   outline: none;
   border-radius: 5px;
   width: 100%;
   height: 100%;
   box-sizing: border-box;
-}
+  font-size: 14px;
 
-textarea:focus {
-  border-color: transparentize($main-color, .7);
+  &:focus {
+    border-color: transparentize($main-color, .7);
+  }
 }
