@@ -7,7 +7,9 @@
 
     <link rel="stylesheet" type="text/css" href="./css/index.css">
 
-    <script type="text/javascript" src="./utils.js"></script>
+    <script type="text/javascript" src="js/utils.js"></script>
+    <script src="js/lodash.min.js"></script>
+    <script type="text/javascript" src="js/image_slider.js"></script>
 
     <title>Demo Shop</title>
 </head>
@@ -26,8 +28,7 @@
                 <div class="ProductDisplay-card">
                     <div class="row">
                         <div class="col-xs-12 col-sm-6">
-                            <div class="ProductDisplay-ratedImage"><img class="ProductDisplay-image" src="./images/3.jpg"
-                                                                        alt="No Picture found"/>
+                            <div class="ProductDisplay-ratedImage"><image-slider images='["images/1.jpg","images/2.jpg","images/3.jpg"]'></image-slider>
                                 <div class="Rating-wrapper"><i class="Rating-star_full"></i><i
                                         class="Rating-star_full"></i><i class="Rating-star_blank"></i><i
                                         class="Rating-star_blank"></i><i class="Rating-star_blank"></i></div>
