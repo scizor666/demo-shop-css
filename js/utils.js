@@ -22,6 +22,13 @@ const toggleBlur = () => {
     }
 };
 
+const setVisibility = (element, visible) => {
+    if (visible) {
+        element.style.visibility = 'visible';
+    } else {
+        element.style.visibility = 'hidden';
+    }
+};
 const toggleFilter = () => {
     toggleDisplay('filter');
     let button = document.querySelector('.Filter-wrapper > .DemoShop-button');

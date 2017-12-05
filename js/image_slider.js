@@ -119,8 +119,10 @@ class ImageSlider extends HTMLElement {
             this.adjustZoomDisplay(newOffsetX, newOffsetY, hoverArea.offsetWidth, hoverArea.offsetHeight);
         });
 
-        this.shadow.getElementById('wrapper').addEventListener('mouseleave',
-            () => this.shadow.getElementById('hover-area').style.visibility = 'hidden')
+        this.shadow.getElementById('wrapper').addEventListener('mouseleave', () => {
+                setVisibility(hoverArea, false);
+                setVisibility(this.shadow.getElementById('zoom-wrapper'), false);
+            })
     }
 
     adjustHoverDisplay(newOffsetX, newOffsetY) {
@@ -128,11 +130,11 @@ class ImageSlider extends HTMLElement {
         if (newOffsetX < 0 || newOffsetY < 0
             || (this.state.canvas.offsetWidth - newOffsetX - hoverArea.offsetWidth) < 0
             || (this.state.canvas.offsetHeight - newOffsetY - hoverArea.offsetHeight) < 0) {
-            hoverArea.style.visibility = 'hidden';
+            setVisibility(hoverArea, false);
         } else {
             hoverArea.style.left = newOffsetX + 'px';
             hoverArea.style.top = newOffsetY + 'px';
-            hoverArea.style.visibility = 'visible';
+            setVisibility(hoverArea, true);
         }
     }
 
@@ -147,9 +149,9 @@ class ImageSlider extends HTMLElement {
             zoomCanvas.getContext('2d').drawImage(this.state.canvas,
                 sx * scaleX, sy * scaleY, zoomCanvas.width, zoomCanvas.height,
                 0, 0, zoomCanvas.width, zoomCanvas.height);
-            zoomArea.style.visibility = 'visible';
+            setVisibility(zoomArea, true);
         } else {
-            zoomArea.style.visibility = 'hidden';
+            setVisibility(zoomArea, false);
         }
     }
 
@@ -164,7 +166,6 @@ class ImageSlider extends HTMLElement {
             this.drawImageWithAnimation(img, opacity, delay);
         };
         img.src = imgSource;
-        return canvas
     }
 
     drawImageWithAnimation(image, opacity, delay) {
