@@ -7,9 +7,10 @@
 
     <link rel="stylesheet" type="text/css" href="./css/index.css">
 
-    <script type="text/javascript" src="js/utils.js"></script>
+    <script src="js/utils.js"></script>
     <script src="js/lodash.min.js"></script>
-    <script type="text/javascript" src="js/image_slider.js"></script>
+    <script src="js/image_slider.js"></script>
+    <script src="js/review_adder.js"></script>
 
     <title>Demo Shop</title>
 </head>
@@ -49,6 +50,10 @@
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="Review-wrapper">
+                    <div class="Review-tooltip">There is no user reviews for now.<br>Would you like to <a href="javascript:void(0);" onclick="toggleDisplay('Review-adder');this.parentNode.innerHTML = 'There is no user reviews for now.<br>Share your thoughts with other customers:';" id="Review-shareLink">share your thoughts with other customers</a>?</div>
+                    <div id="Review-adder"><review-adder></review-adder></div>
                 </div>
             </div>
         </div>

@@ -665,6 +665,9 @@ body {
     font-size: 16px;
     font-weight: bold; }
 
+.ProductDisplay-image {
+  width: 100%; }
+
 .ProductDisplay-ratedImage {
   display: block;
   padding: 0;
@@ -674,7 +677,7 @@ body {
   background-image: url("../images/modal-bg.png");
   padding: 20px;
   width: 100%;
-  margin: 0; }
+  margin: 0 0 30px; }
   .ProductDisplay-card > .row {
     display: flex;
     flex-wrap: wrap;
@@ -823,5 +826,15 @@ body {
 
 .Rating-star_blank {
   background-image: url("../images/star-inactive.svg"); }
+
+.Review-wrapper {
+  color: #ffffff;
+  font-size: 16px; }
+  .Review-wrapper .Review-tooltip {
+    margin: 0 auto;
+    max-width: 420px;
+    text-align: center; }
+  .Review-wrapper #Review-shareLink {
+    color: #ffda2c; }
 
 /*# sourceMappingURL=index.css.map */

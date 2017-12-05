@@ -27,6 +27,10 @@ $name-margin-size: 10px;
   }
 }
 
+.ProductDisplay-image {
+  width: 100%;
+}
+
 .ProductDisplay-ratedImage {
   display: block;
   padding: 0;
@@ -37,7 +41,7 @@ $name-margin-size: 10px;
   background-image: url("/images/modal-bg.png");
   padding: 20px;
   width: 100%;
-  margin: 0;
+  margin: 0 0 30px;
 
   & > .row {
     display: flex;
