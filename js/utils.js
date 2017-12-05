@@ -21,3 +21,11 @@ const toggleBlur = () => {
         app.className += " " + blurClass;
     }
 };
+
+const setVisibility = (element, visible) => {
+    if (visible) {
+        element.style.visibility = 'visible';
+    } else {
+        element.style.visibility = 'hidden';
+    }
+};
