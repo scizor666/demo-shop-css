@@ -83,9 +83,16 @@ class ReviewAdder extends HTMLElement {
                 margin-bottom: 20px;
             }
             
-            i {
-                font-style: italic;
+            b, i {
                 color: #FFCC00;
+            }
+            
+            q {
+                color: #FFFFFF;	
+                font-size: 24px;	
+                font-style: italic;	
+                line-height: 32px;
+                // @TODO custom quotes
             }
             
             #preview-avatar {
@@ -97,9 +104,14 @@ class ReviewAdder extends HTMLElement {
                 border: 1px solid #FFCC00;
             }
             
+            #preview-main {
+                display: flex;
+            }
+            
             #preview-text {
                 display: inline-block;
-                
+                white-space: pre-wrap;
+                padding-bottom: 20px;
             }
             
             #review-pane {
@@ -328,7 +340,14 @@ class ReviewAdder extends HTMLElement {
     }
 
     forcePreviewTextUpdate(value) {
-        this.shadow.getElementById('preview-text').innerHTML = value ? value : this.placeholders.preview;
+        const sanitize = text => text.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+        const htmlize = text =>
+            ['b', 'i', 'q'].reduce((text, modifier) =>
+                text.replace(new RegExp(`\\[${modifier}]`, 'g'), `<${modifier}>`)
+                    .replace(new RegExp(`\\[\\/${modifier}]`, 'g'), `</${modifier}>`), text);
+
+        const preview = this.shadow.getElementById('preview-text');
+        preview.innerHTML = value ? htmlize(sanitize(value)) : this.placeholders.preview;
     }
 
     addImageChangeHandler() {
