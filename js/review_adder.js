@@ -313,7 +313,7 @@ class ReviewAdder extends HTMLElement {
                                 </div>
                                 <div id="review-confirmButtons">
                                     <button id="review-cancel" class="secondary">Cancel</button>
-                                    <button id="review-submit" type="submit">Add review</button>
+                                    <button id="review-submit" disabled type="submit">Add review</button>
                                 </div>
                             </div>
                         </div>
@@ -331,6 +331,19 @@ class ReviewAdder extends HTMLElement {
         this.addConfirmButtonsHandlers();
     }
 
+    static get observedAttributes() {
+        return ['hidden'];
+    }
+
+    attributeChangedCallback() {
+        this.setComponentHidden(this.shadow.host.hasAttribute('hidden'))
+    }
+
+    setComponentHidden(hidden) {
+        const wrapper = this.shadow.getElementById('wrapper');
+        hidden ? wrapper.setAttribute('hidden', '') : wrapper.removeAttribute('hidden');
+    }
+
     addDate() {
         const today = new Date();
         this.shadow.getElementById('preview-date').textContent =
@@ -338,8 +351,15 @@ class ReviewAdder extends HTMLElement {
     }
 
     addReviewChangeHandler() {
-        this.shadow.getElementById('review-text')
-            .addEventListener('keyup', e => this.forcePreviewTextUpdate(e.target.value));
+        this.shadow.getElementById('review-text').addEventListener('keyup', e => {
+            this.forcePreviewTextUpdate(e.target.value);
+            this.setSubmitButtonEnabled(e.target.value.trim().length > 0);
+        });
+    }
+
+    setSubmitButtonEnabled(enabled) {
+        const button = this.shadow.getElementById('review-submit');
+        enabled ? button.removeAttribute('disabled') : button.setAttribute('disabled', '');
     }
 
     forcePreviewTextUpdate(value) {
@@ -421,7 +441,7 @@ class ReviewAdder extends HTMLElement {
 
     addConfirmButtonsHandlers() {
         this.shadow.getElementById('review-submit').addEventListener('click', e => alert(this.placeholders.submit));
-        // #todo handle cancel
+        this.shadow.getElementById('review-cancel').addEventListener('click', () => this.setComponentHidden(true))
     }
 }
 
