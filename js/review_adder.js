@@ -193,8 +193,9 @@ class ReviewAdder extends HTMLElement {
             textarea {
                 border: 5px solid transparent;
                 border-radius: 5px;
-                padding: 10px;	
-                height: 180px;
+                padding: 10px;
+                margin-bottom: 5px;	
+                height: 178px;
                 width: 100%;     
                 color: #000000;
                 font-size: 16px;
@@ -239,13 +240,14 @@ class ReviewAdder extends HTMLElement {
                 height: 18px;
                 background-size: contain;
                 display: inline-block;
+                background-image: url("images/star-active.svg");
             }
             
-            .review-star.full {
-              background-image: url("images/star-active.svg");
+            .review-star.review-star_blank {
+                background-image: url("images/star-gray.svg");
             }
             
-            .review-star.blank {
+            .review-star.preview-star_blank {
               background-image: url("images/star-inactive.svg");
             }
         </style>`;
@@ -259,12 +261,12 @@ class ReviewAdder extends HTMLElement {
                             <span id="preview-signature">
                                 By <i id="preview-name">${this.placeholders.name}</i> <span id="preview-date"></span>
                             </span>
-                            <span hidden>
-                                <i class="review-star blank"></i>
-                                <i class="review-star blank"></i>
-                                <i class="review-star blank"></i>
-                                <i class="review-star blank"></i>
-                                <i class="review-star blank"></i>
+                            <span id="preview-rating" hidden>
+                                <i class="review-star"></i>
+                                <i class="review-star"></i>
+                                <i class="review-star"></i>
+                                <i class="review-star"></i>
+                                <i class="review-star"></i>
                             </span>
                         </div>
                         <div id="preview-main">
@@ -292,12 +294,12 @@ class ReviewAdder extends HTMLElement {
                                     <label>Write your review:</label>
                                     <div>
                                         <label>Rate product: </label>
-                                        <span>
-                                            <i class="review-star blank"></i>
-                                            <i class="review-star blank"></i>
-                                            <i class="review-star blank"></i>
-                                            <i class="review-star blank"></i>
-                                            <i class="review-star blank"></i>
+                                        <span id="review-rating">
+                                            <i class="review-star review-star_blank"></i>
+                                            <i class="review-star review-star_blank"></i>
+                                            <i class="review-star review-star_blank"></i>
+                                            <i class="review-star review-star_blank"></i>
+                                            <i class="review-star review-star_blank"></i>
                                         </span>
                                     </div>
                                 </div>
@@ -324,6 +326,7 @@ class ReviewAdder extends HTMLElement {
         this.addReviewChangeHandler();
         this.addImageChangeHandler();
         this.addNameChangeHandler();
+        this.addRatingHandler();
         this.addTextFormatHandlers();
         this.addConfirmButtonsHandlers();
     }
@@ -369,6 +372,31 @@ class ReviewAdder extends HTMLElement {
         this.shadow.getElementById('review-name').addEventListener('keyup', e =>
             this.shadow.getElementById('preview-name').textContent =
                 e.target.value ? e.target.value : this.placeholders.name)
+    }
+
+    addRatingHandler() {
+        const reviewRating = this.shadow.getElementById('review-rating');
+        const previewRating = this.shadow.getElementById('preview-rating');
+        const reviewBlankClass = 'review-star_blank';
+        const previewBlankClass = 'preview-star_blank';
+        reviewRating.addEventListener('click', e => {
+            const newRatingIndex = Array.prototype.indexOf.call(reviewRating.children, e.target);
+            if (newRatingIndex < 0) return;
+            Array.prototype.forEach.call(reviewRating.children, (e, i) => {
+                const previewStar = previewRating.children[i];
+                if (newRatingIndex < i) {
+                    if (!e.classList.contains(reviewBlankClass)) e.className += ` ${reviewBlankClass}`;
+                    if (!previewStar.classList.contains(previewBlankClass)) {
+                        previewStar.className += ` ${previewBlankClass}`;
+                    }
+                } else {
+                    e.classList.remove(reviewBlankClass);
+                    previewStar.classList.remove(previewBlankClass);
+                }
+                if (previewRating.hasAttribute('hidden')) previewRating.removeAttribute('hidden');
+            });
+
+        });
     }
 
     addTextFormatHandlers() {
