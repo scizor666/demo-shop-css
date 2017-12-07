@@ -84,12 +84,19 @@ $name-margin-size: 10px;
 .ProductDisplay-description {
   border-top: $description-border-size solid #3FC5CB;
   padding-top: 15px;
+  font-size: 16px;
+  line-height: 20px;
 }
 
 .ProductDisplay-buy {
   display: flex;
   justify-content: space-between;
   padding-top: 20px;
+}
+
+.ProductDisplay-left, .ProductDisplay-notAvailable {
+  font-size: 16px;
+  line-height: 20px;
 }
 
 .ProductDisplay-notAvailable {

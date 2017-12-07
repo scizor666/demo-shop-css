@@ -24,9 +24,7 @@ $data-margin: 10px;
   font-weight: bold;
   padding-bottom: $data-padding/2;
   margin-bottom: $data-margin;
-  border-bottom: solid;
-  border-color: $main-color;
-  border-width: 2px;
+  border-bottom: 2px solid #3FC5CB;
 }
 
 .ProductCard-data {
@@ -39,6 +37,7 @@ $data-margin: 10px;
 
 .ProductCard-description {
   font-size: 14px;
+  line-height: 19px;
 }
 
 .ProductCard-button {

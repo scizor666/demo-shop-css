@@ -46,7 +46,10 @@
                                 <div class="ProductDisplay-buy">
                                     <div><span class="ProductPrice-wrapper">
                                         <span class="ProductPrice-currency">$</span>57.35</span>
-                                        <span> (1 day left)</span>
+                                        <span class="ProductDisplay-left"> (1 item left)</span>
+                                    </div>
+                                    <div>
+                                        <button onclick="togglePopup('buyModal')" class="DemoShop-button">Buy</button>
                                     </div>
                                 </div>
                             </div>
@@ -136,6 +139,19 @@
             <div class="ConfirmButtons-wrapper">
                 <button class="DemoShop-button_bigSecondary" onclick="togglePopup('deleteModal')">Cancel</button>
                 <button class="DemoShop-button_big" onclick="togglePopup('deleteModal')">Confirm</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="ProductDisplay-buyModal" id="buyModal" style="display: none;">
+    <div class="Modal-back"></div>
+    <div class="Modal-wrapper">
+        <div class="Modal-title">Thank you!</div>
+        <div class="Modal-content">
+            <div class="ProductDisplay-BuyModalText">You successfully purchased this item.</div>
+            <div class="ProductDisplay-buyModalButtonWrapper">
+                <button class="DemoShop-button_big" onclick="togglePopup('buyModal')">Continue shopping</button>
             </div>
         </div>
     </div>

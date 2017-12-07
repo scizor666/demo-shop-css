@@ -9,6 +9,11 @@
   text-overflow: ellipsis;
 }
 
+.DemoShop-field::placeholder {
+  color: #999999;
+  font-style: italic;
+}
+
 .DemoShop-field:focus {
   border-color: transparentize($main-color, .7);
 }

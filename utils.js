@@ -1,5 +1,5 @@
-var toggleDisplay = function (id) {
-    var element = document.getElementById(id);
+const toggleDisplay = id => {
+    const element = document.getElementById(id);
     if (element.style.display === "none") {
         element.style.display = "block";
     } else {
@@ -7,17 +7,23 @@ var toggleDisplay = function (id) {
     }
 };
 
-var togglePopup = function (id) {
+const togglePopup = id => {
     toggleDisplay(id);
     toggleBlur()
 };
 
-var toggleBlur = function () {
-    var blurClass = "App-blur";
-    var app = document.querySelector(".App");
+const toggleBlur = () => {
+    const blurClass = "App-blur";
+    const app = document.querySelector(".App");
     if (app.classList.contains(blurClass)) {
         app.classList.remove(blurClass);
     } else {
         app.className += " " + blurClass;
     }
+};
+
+const toggleFilter = () => {
+    toggleDisplay('filter');
+    let button = document.querySelector('.Filter-wrapper > .DemoShop-button');
+    button.hasAttribute('pressed') ? button.removeAttribute('pressed') : button.setAttribute('pressed', '');
 };
