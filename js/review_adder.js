@@ -39,6 +39,7 @@ class ReviewAdder extends HTMLElement {
                 text-align: center;
                 outline: none;
                 padding: 0 15px;
+                cursor: pointer;
             }
             
             button.secondary {
@@ -61,6 +62,7 @@ class ReviewAdder extends HTMLElement {
             
             button[disabled] {
                 opacity: .5;
+                cursor: default;
             }
             
             #wrapper * {
@@ -484,6 +486,7 @@ class ReviewAdder extends HTMLElement {
         this.shadow.getElementById('preview-name').textContent = this.placeholders.name;
         this.setNewRateByIndex(-1);
         this.shadow.getElementById('preview-rating').setAttribute('hidden', '');
+        this.shadow.getElementById('review-submit').setAttribute('disabled', '');
     }
 }
 
