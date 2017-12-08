@@ -73,7 +73,7 @@ class ImageSlider extends HTMLElement {
                     <canvas id="image-canvas"></canvas>
                     <div id="hover-area"></div>                 
                 </div>
-                <span id="left-arrow"></span>
+                <span id="left-arrow" disabled></span>
                 <span id="right-arrow"></span>
                 <div id="zoom-wrapper">
                     <canvas id="zoom-canvas"></canvas>
@@ -91,6 +91,7 @@ class ImageSlider extends HTMLElement {
         const imagesCount = this.state.images.length;
         const leftArrow = this.shadow.getElementById('left-arrow');
         const rightArrow = this.shadow.getElementById('right-arrow');
+        if (imagesCount < 2) rightArrow.setAttribute('disabled', '');
         leftArrow.addEventListener("click", _.throttle(() => {
 
             if (this.state.currentIndex === 0) return;
