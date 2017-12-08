@@ -35,6 +35,8 @@
   text-align: center;
   height: 70px;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.11);
+  position: relative;
+  z-index: 1;
 }
 
 .Modal-content {

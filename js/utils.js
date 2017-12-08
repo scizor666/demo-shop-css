@@ -29,3 +29,8 @@ const setVisibility = (element, visible) => {
         element.style.visibility = 'hidden';
     }
 };
+const toggleFilter = () => {
+    toggleDisplay('filter');
+    let button = document.querySelector('.Filter-wrapper > .DemoShop-button');
+    button.hasAttribute('pressed') ? button.removeAttribute('pressed') : button.setAttribute('pressed', '');
+};
