@@ -44,14 +44,14 @@ class ImageSlider extends HTMLElement {
                 opacity: .5;
                 left: 0;
                 top: 0;
-                border: 3px solid rgba(255,255,0,0.97);
+                border: 3px solid #FFCC00;
                 box-sizing: border-box;
                 -webkit-transition: all 100ms linear;
                 transition: all 100ms linear;}
             #zoom-wrapper {
                 position: absolute;               
                 box-sizing: border-box;
-                border: 3px solid rgba(255,255,0,0.97);
+                border: 3px solid #FFCC00;
                 visibility: hidden;
                 left: calc(100% + 6px);
                 top: 0;

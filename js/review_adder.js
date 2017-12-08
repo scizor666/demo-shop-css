@@ -46,7 +46,7 @@ class ReviewAdder extends HTMLElement {
             }
             
             button:active {
-                background: linear-gradient(0deg, #2BBCC2 100%, #1B745F 0%);
+                background: linear-gradient(0deg, #2BBCC2, #1B745F);
                 box-shadow: inset 2px 2px 4px 0 rgba(0,0,0,0.3);
             }
 
