@@ -10,10 +10,6 @@ class ImageSlider extends HTMLElement {
         };
     };
 
-    arrow() {
-        return 'data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDggNDg7IiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA0OCA0OCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+PGcgZmlsbD0iI2ZmY2MwMCI+PHBvbHlnb24gcG9pbnRzPSIzMC44LDQ1LjcgOS4xLDI0IDMwLjgsMi4zIDMyLjIsMy43IDExLjksMjQgMzIuMiw0NC4zICAiLz48L2c+PC9zdmc+';
-    }
-
     style() {
         return `<style>
             #wrapper {
@@ -27,7 +23,11 @@ class ImageSlider extends HTMLElement {
                 width: 40px;
                 top: calc(50% - 25px); 
                 cursor: pointer;
-                background: url(${this.arrow()}) no-repeat 100% transparent; }
+                background: url('images/arrow.svg') no-repeat 100% transparent; }
+            #left-arrow[disabled], #right-arrow[disabled] {
+                opacity: .5;
+                cursor: default;
+            }
             #left-arrow { 
                 left: 0; 
                 padding-left: 15px;}
@@ -89,15 +89,23 @@ class ImageSlider extends HTMLElement {
         this.renderImage(this.state.images[this.state.currentIndex], 1, 0);
 
         const imagesCount = this.state.images.length;
-        this.shadow.getElementById('left-arrow').addEventListener("click", _.throttle(() => {
-            const nextIndex =
-                this.state.currentIndex > 0 ? --this.state.currentIndex : this.state.currentIndex = imagesCount - 1;
-            this.renderImage(this.state.images[nextIndex])
+        const leftArrow = this.shadow.getElementById('left-arrow');
+        const rightArrow = this.shadow.getElementById('right-arrow');
+        leftArrow.addEventListener("click", _.throttle(() => {
+
+            if (this.state.currentIndex === 0) return;
+            this.renderImage(this.state.images[--this.state.currentIndex]);
+            if (this.state.currentIndex === 0) leftArrow.setAttribute('disabled', '');
+            rightArrow.removeAttribute('disabled');
+
         }, 300));
-        this.shadow.getElementById('right-arrow').addEventListener("click", _.throttle(() => {
-            const nextIndex =
-                this.state.currentIndex < imagesCount - 1 ? ++this.state.currentIndex : this.state.currentIndex = 0;
-            this.renderImage(this.state.images[nextIndex])
+        rightArrow.addEventListener("click", _.throttle(() => {
+
+            if (this.state.currentIndex === imagesCount - 1) return;
+            this.renderImage(this.state.images[++this.state.currentIndex]);
+            if (this.state.currentIndex === imagesCount - 1) rightArrow.setAttribute('disabled', '');
+            leftArrow.removeAttribute('disabled');
+
         }, 300));
 
     }
@@ -120,9 +128,9 @@ class ImageSlider extends HTMLElement {
         });
 
         this.shadow.getElementById('wrapper').addEventListener('mouseleave', () => {
-                setVisibility(hoverArea, false);
-                setVisibility(this.shadow.getElementById('zoom-wrapper'), false);
-            })
+            setVisibility(hoverArea, false);
+            setVisibility(this.shadow.getElementById('zoom-wrapper'), false);
+        })
     }
 
     adjustHoverDisplay(newOffsetX, newOffsetY) {
