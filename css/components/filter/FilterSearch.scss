@@ -8,7 +8,7 @@
 .FilterSearch-field {
   @extend .DemoShop-field;
   border-radius: 5px;
-  padding: 9px 42px 9px 17px;
+  padding: 0 42px 0 17px;
   height: 35px;
   width: 235px;
   background-image: url("/images/search.svg");
@@ -16,7 +16,3 @@
   background-position: 206px;
   background-size: 20px;
 }
-//
-//.FilterSearch-field:focus {
-//  border-color: transparentize($inactive-color, .7);
-//}
