@@ -54,9 +54,10 @@
                     </div>
                 </div>
                 <div class="Review-wrapper">
-                    <div class="Review-tooltip">There is no user reviews for now.<br>Would you like to
-                        <a href="javascript:void(0);" onclick="document.querySelector('review-adder').removeAttribute('hidden');
-                    this.parentNode.innerHTML = 'There is no user reviews for now.<br>Share your thoughts with other customers:';" id="Review-shareLink">share your thoughts with other customers</a>?</div>
+                    <div class="Review-tooltip">There is no user reviews for now.<br><span id="Review-wouldReview">Would you like to
+                        <a id="Review-shareLink" href="javascript:void(0);" onclick="toggleReviewAdderDisplay()">share your thoughts with other customers</a>?</span>
+                        <span id="Review-share" hidden>Share your thoughts with other customers:</span>
+                    </div>
                     <div id="Review-adder"><review-adder hidden></review-adder></div>
                 </div>
             </div>
@@ -77,5 +78,23 @@
         </div>
     </div>
 </div>
+<script>
+    document.querySelector("review-adder").shadowRoot.
+    getElementById("review-cancel").addEventListener('click', () => toggleReviewAdderDisplay());
+    const toggleReviewAdderDisplay = ()  =>  {
+        const wouldReview = document.getElementById('Review-wouldReview');
+        const sharing = document.getElementById('Review-share');
+        const reviewAdder = document.querySelector('review-adder');
+        if (wouldReview.hasAttribute('hidden')) {
+            wouldReview.removeAttribute('hidden');
+            reviewAdder.setAttribute('hidden', '');
+            sharing.setAttribute('hidden', '');
+        } else {
+            wouldReview.setAttribute('hidden', '');
+            sharing.removeAttribute('hidden');
+            reviewAdder.removeAttribute('hidden');
+        }
+    }
+</script>
 </body>
 </html>

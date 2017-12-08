@@ -9,7 +9,10 @@ class ReviewAdder extends HTMLElement {
             imageSelected: 'Image selected',
             name: 'Your name',
             preview: 'Start typing and your review text will appear here...',
-            submit: "Your review has been added!"
+            submit: "Your review has been added!",
+            uploadImage: 'images/upload-icon.png',
+            emptyAvatar: 'images/blank-image.png',
+
         };
         this.shadow = this.attachShadow({mode: 'open'});
         this.shadow.innerHTML += this.style();
@@ -92,7 +95,23 @@ class ReviewAdder extends HTMLElement {
                 font-size: 24px;	
                 font-style: italic;	
                 line-height: 32px;
-                // @TODO custom quotes
+                quotes: "\\201C\\A0" "\\A0\\201e";
+            }
+            
+            q:before, q:after {
+                font-weight: bold;
+                font-style: normal;
+                color: #FFCC00;
+                font-size: 40px;
+            }
+            
+            q:before {
+                content: open-quote;
+                vertical-align: middle;
+            }
+
+            q:after {
+                content: close-quote;
             }
             
             #preview-avatar {
@@ -112,6 +131,7 @@ class ReviewAdder extends HTMLElement {
                 display: inline-block;
                 white-space: pre-wrap;
                 padding-bottom: 20px;
+                width: 100%;
             }
             
             #review-pane {
@@ -270,7 +290,7 @@ class ReviewAdder extends HTMLElement {
                             </span>
                         </div>
                         <div id="preview-main">
-                            <img id="preview-avatar" src="images/blank-image.png"/>
+                            <img id="preview-avatar" src="${this.placeholders.emptyAvatar}"/>
                             <div id="preview-text">${this.placeholders.preview}</div>
                         </div>
                         <div id="review-pane">EDIT YOUR REVIEW</div>
@@ -283,7 +303,7 @@ class ReviewAdder extends HTMLElement {
                             <div id="review-upload">
                                 <span id="review-uploadText">${this.placeholders.imageNotSelected}</span>
                                 <label for="review-uploadImage">
-                                    <img src="images/upload-icon.png"/>
+                                    <img src="${this.placeholders.uploadImage}"/>
                                 </label>
                                 <input id="review-uploadImage" hidden type="file" accept="image/*"/>
                             </div>
@@ -326,7 +346,7 @@ class ReviewAdder extends HTMLElement {
         this.addReviewChangeHandler();
         this.addImageChangeHandler();
         this.addNameChangeHandler();
-        this.addRatingHandler();
+        this.addRateHandler();
         this.addTextFormatHandlers();
         this.addConfirmButtonsHandlers();
     }
@@ -347,7 +367,7 @@ class ReviewAdder extends HTMLElement {
     addDate() {
         const today = new Date();
         this.shadow.getElementById('preview-date').textContent =
-            `${this.placeholders.months[today.getMonth()]} ${today.getDay()}, ${today.getFullYear()}`
+            `${this.placeholders.months[today.getMonth()]} ${today.getDate()}, ${today.getFullYear()}`
     }
 
     addReviewChangeHandler() {
@@ -394,28 +414,32 @@ class ReviewAdder extends HTMLElement {
                 e.target.value ? e.target.value : this.placeholders.name)
     }
 
-    addRatingHandler() {
+    addRateHandler() {
+        const reviewRating = this.shadow.getElementById('review-rating');
+        reviewRating.addEventListener('click', e => {
+            const newRatingIndex = Array.prototype.indexOf.call(reviewRating.children, e.target);
+            if (newRatingIndex < 0) return;
+            this.setNewRateByIndex(newRatingIndex);
+        });
+    }
+
+    setNewRateByIndex(rateIndex) {
         const reviewRating = this.shadow.getElementById('review-rating');
         const previewRating = this.shadow.getElementById('preview-rating');
         const reviewBlankClass = 'review-star_blank';
         const previewBlankClass = 'preview-star_blank';
-        reviewRating.addEventListener('click', e => {
-            const newRatingIndex = Array.prototype.indexOf.call(reviewRating.children, e.target);
-            if (newRatingIndex < 0) return;
-            Array.prototype.forEach.call(reviewRating.children, (e, i) => {
-                const previewStar = previewRating.children[i];
-                if (newRatingIndex < i) {
-                    if (!e.classList.contains(reviewBlankClass)) e.className += ` ${reviewBlankClass}`;
-                    if (!previewStar.classList.contains(previewBlankClass)) {
-                        previewStar.className += ` ${previewBlankClass}`;
-                    }
-                } else {
-                    e.classList.remove(reviewBlankClass);
-                    previewStar.classList.remove(previewBlankClass);
+        Array.prototype.forEach.call(reviewRating.children, (e, i) => {
+            const previewStar = previewRating.children[i];
+            if (rateIndex < i) {
+                if (!e.classList.contains(reviewBlankClass)) e.className += ` ${reviewBlankClass}`;
+                if (!previewStar.classList.contains(previewBlankClass)) {
+                    previewStar.className += ` ${previewBlankClass}`;
                 }
-                if (previewRating.hasAttribute('hidden')) previewRating.removeAttribute('hidden');
-            });
-
+            } else {
+                e.classList.remove(reviewBlankClass);
+                previewStar.classList.remove(previewBlankClass);
+            }
+            if (previewRating.hasAttribute('hidden')) previewRating.removeAttribute('hidden');
         });
     }
 
@@ -441,7 +465,25 @@ class ReviewAdder extends HTMLElement {
 
     addConfirmButtonsHandlers() {
         this.shadow.getElementById('review-submit').addEventListener('click', e => alert(this.placeholders.submit));
-        this.shadow.getElementById('review-cancel').addEventListener('click', () => this.setComponentHidden(true))
+        this.shadow.getElementById('review-cancel').addEventListener('click', () => {
+            this.setComponentHidden(true);
+            this.resetData();
+        })
+    }
+
+    resetData() {
+        this.shadow.getElementById('review-text').value = '';
+        this.forcePreviewTextUpdate('');
+        this.shadow.getElementById('');
+        this.shadow.querySelector('#review-upload img').src = this.placeholders.uploadImage;
+        this.shadow.getElementById('preview-avatar').src = this.placeholders.emptyAvatar;
+        const imageUploadedText = this.shadow.getElementById('review-uploadText');
+        imageUploadedText.classList.remove('uploaded');
+        imageUploadedText.textContent = this.placeholders.imageNotSelected;
+        this.shadow.getElementById('review-name').value = '';
+        this.shadow.getElementById('preview-name').textContent = this.placeholders.name;
+        this.setNewRateByIndex(-1);
+        this.shadow.getElementById('preview-rating').setAttribute('hidden', '');
     }
 }
 
