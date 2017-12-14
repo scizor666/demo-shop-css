@@ -466,7 +466,7 @@ class ReviewAdder extends HTMLElement {
     }
 
     addConfirmButtonsHandlers() {
-        this.shadow.getElementById('review-submit').addEventListener('click', e => alert(this.placeholders.submit));
+        this.shadow.getElementById('review-submit').addEventListener('click', () => alert(this.placeholders.submit));
         this.shadow.getElementById('review-cancel').addEventListener('click', () => {
             this.setComponentHidden(true);
             this.resetData();
@@ -476,7 +476,6 @@ class ReviewAdder extends HTMLElement {
     resetData() {
         this.shadow.getElementById('review-text').value = '';
         this.forcePreviewTextUpdate('');
-        this.shadow.getElementById('');
         this.shadow.querySelector('#review-upload img').src = this.placeholders.uploadImage;
         this.shadow.getElementById('preview-avatar').src = this.placeholders.emptyAvatar;
         const imageUploadedText = this.shadow.getElementById('review-uploadText');
