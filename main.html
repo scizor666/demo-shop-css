@@ -20,127 +20,121 @@
         </div>
     </header>
     <main class="App-main">
-        <div>
-            <div class="App-shadow"></div>
-            <div class="ProductList-wrapper">
-                <div class="Filter-wrapper">
-                    <button class="DemoShop-button" onclick="toggleFilter()">
-                        Filter options
-                    </button>
-                    <div class="FilterSearch-fieldGroup">
-                        <input class="FilterSearch-field" placeholder="Filter by text..."/>
-                    </div>
-                    <div id="filter" class="inactive">
-                        <div class="FilterModal-arrowUp"></div>
-                        <div class="container-fluid FilterModal-wrapper">
-                            <div class="row">
-                                <div class="col-xs-12 col-sm-4">
-                                    <div>
-                                        <span class="FilterModal-filterName">Availability</span>:
-                                        <label class="DemoShop-switch FilterModal-availabilityOption">
-                                            <input type="checkbox" id="available" name="available" value="1"/>
-                                            <span class="DemoShop-slider"></span>
-                                            <span class="DemoShop-switchLabel">Available only</span>
+        <div class="App-shadow"></div>
+        <div class="ProductList-wrapper">
+            <div class="Filter-wrapper">
+                <button class="DemoShop-button" onclick="toggleFilter()">
+                    Filter options
+                </button>
+                <div class="FilterSearch-fieldGroup">
+                    <input class="FilterSearch-field" placeholder="Filter by text..."/>
+                </div>
+                <div id="filter" class="inactive">
+                    <div class="FilterModal-arrowUp"></div>
+                    <div class="container-fluid FilterModal-wrapper">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-4">
+                                <div class="FilterModal-filter">
+                                    <span class="FilterModal-filterName">Availability</span>:
+                                    <label class="DemoShop-switch FilterModal-availabilityOption">
+                                        <input type="checkbox" id="available" name="available" value="1"/>
+                                        <span class="DemoShop-slider"></span>
+                                        <span class="DemoShop-switchLabel">Available only</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-4">
+                                <div class="FilterModal-filter">
+                                    <span class="FilterModal-filterName">Gender:</span>
+                                    <div class="DemoShop-radioOptionWrapper">
+                                        <label>
+                                            <input type="radio" id="FilterModal-gender_man"
+                                                   class="DemoShop-radioInput" name="gender" value="man"/>
+                                            <label for="FilterModal-gender_man"
+                                                   class="DemoShop-radioLabel">Man
+                                            </label>
+                                        </label>
+                                        <label>
+                                            <input type="radio" id="FilterModal-gender_woman"
+                                                   class="DemoShop-radioInput" name="gender" value="woman"/>
+                                            <label for="FilterModal-gender_woman"
+                                                   class="DemoShop-radioLabel">Woman
+                                            </label>
+                                        </label>
+                                        <label>
+                                            <input type="radio" id="FilterModal-gender_unisex"
+                                                   class="DemoShop-radioInput" name="gender" value="unisex"
+                                                   checked=""/>
+                                            <label for="FilterModal-gender_unisex"
+                                                   class="DemoShop-radioLabel">Unisex
+                                            </label>
                                         </label>
                                     </div>
                                 </div>
-                                <div class="col-xs-12 col-sm-4">
-                                    <div>
-                                        <span class="FilterModal-filterName">Gender:</span>
-                                        <div class="DemoShop-radioOptionWrapper">
-                                            <label>
-                                                <input type="radio" id="FilterModal-gender_man"
-                                                       class="DemoShop-radioInput" name="gender" value="man"/>
-                                                <label for="FilterModal-gender_man"
-                                                       class="DemoShop-radioLabel">Man
-                                                </label>
-                                            </label>
-                                            <label>
-                                                <input type="radio" id="FilterModal-gender_woman"
-                                                       class="DemoShop-radioInput" name="gender" value="woman"/>
-                                                <label for="FilterModal-gender_woman"
-                                                       class="DemoShop-radioLabel">Woman
-                                                </label>
-                                            </label>
-                                            <label>
-                                                <input type="radio" id="FilterModal-gender_unisex"
-                                                       class="DemoShop-radioInput" name="gender" value="unisex"
-                                                       checked=""/>
-                                                <label for="FilterModal-gender_unisex"
-                                                       class="DemoShop-radioLabel">Unisex
-                                                </label>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xs-12 col-sm-4">
-                                    <div>
-                                        <span class="FilterModal-filterName">Category:</span>
-                                        <select class="FilterModal-categorySelect">
-                                            <option value="activeWear">Active Wear</option>
-                                            <option value="dresses">Dresses</option>
-                                            <option value="jeans">Jeans</option>
-                                            <option value="coats">Coats</option>
-                                        </select>
-                                    </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-4">
+                                <div class="FilterModal-filter">
+                                    <span class="FilterModal-filterName">Category:</span>
+                                    <select class="FilterModal-categorySelect">
+                                        <option value="activeWear">Active Wear</option>
+                                        <option value="dresses">Dresses</option>
+                                        <option value="jeans">Jeans</option>
+                                        <option value="coats">Coats</option>
+                                    </select>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-xs-12 col-sm-4">
-                                    <div class="FilterRating-wrapper"><span
-                                            class="FilterModal-filterName">Rating:</span>
-                                        <div>
-                                            <div class="DemoShop-range">
-                                                <div class="DemoShop-rangeRail"></div>
-                                                <div class="DemoShop-rangeTrack"
-                                                     style="visibility:visible;left:20%;width:40%">
-                                                </div>
-                                                <div role="slider" tabIndex="0" aria-valuemin="0" aria-valuemax="5"
-                                                     aria-valuenow="1" aria-disabled="false"
-                                                     class="DemoShop-rangeHandle" style="left:20%">
-                                                </div>
-                                                <div role="slider" tabIndex="0" aria-valuemin="0" aria-valuemax="5"
-                                                     aria-valuenow="3" aria-disabled="false"
-                                                     class="DemoShop-rangeHandle" style="left:60%">
-                                                </div>
-                                                <div class="DemoShop-rangeMark">
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-4">
+                                <div class="FilterModal-filter FilterRating-wrapper">
+                                    <span class="FilterModal-filterName">Rating:</span>
+                                    <div class="DemoShop-range">
+                                        <div class="DemoShop-rangeRail"></div>
+                                        <div class="DemoShop-rangeTrack"
+                                             style="visibility:visible;left:20%;width:40%">
+                                        </div>
+                                        <div role="slider" tabIndex="0" aria-valuemin="0" aria-valuemax="5"
+                                             aria-valuenow="1" aria-disabled="false"
+                                             class="DemoShop-rangeHandle" style="left:20%">
+                                        </div>
+                                        <div role="slider" tabIndex="0" aria-valuemin="0" aria-valuemax="5"
+                                             aria-valuenow="3" aria-disabled="false"
+                                             class="DemoShop-rangeHandle" style="left:60%">
+                                        </div>
+                                        <div class="DemoShop-rangeMark">
                                                     <span class="DemoShop-rangeMarkText"
                                                           style="width:90%;margin-left:-45%;left:20%">1
                                                     </span>
-                                                    <span class="DemoShop-rangeMarkText"
-                                                          style="width:90%;margin-left:-45%;left:60%">3
+                                            <span class="DemoShop-rangeMarkText"
+                                                  style="width:90%;margin-left:-45%;left:60%">3
                                                     </span>
-                                                </div>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xs-12 col-sm-8">
-                                    <div>
-                                        <span class="FilterModal-filterName">Price:</span>
-                                        <div>
-                                            <div class="DemoShop-range">
-                                                <div class="DemoShop-rangeRail"></div>
-                                                <div class="DemoShop-rangeTrack"
-                                                     style="visibility:visible;left:30%;width:30%">
-                                                </div>
-                                                <div role="slider" tabIndex="0" aria-valuemin="0" aria-valuemax="1000"
-                                                     aria-valuenow="300" aria-disabled="false"
-                                                     class="DemoShop-rangeHandle" style="left:30%">
-                                                </div>
-                                                <div role="slider" tabIndex="0" aria-valuemin="0" aria-valuemax="1000"
-                                                     aria-valuenow="600" aria-disabled="false"
-                                                     class="DemoShop-rangeHandle" style="left:60%">
-                                                </div>
-                                                <div class="DemoShop-rangeMark">
+                            </div>
+                            <div class="col-xs-12 col-sm-8">
+                                <div class="FilterModal-filter FilterPrice-wrapper">
+                                    <span class="FilterModal-filterName">Price:</span>
+                                    <div class="DemoShop-range">
+                                        <div class="DemoShop-rangeRail"></div>
+                                        <div class="DemoShop-rangeTrack"
+                                             style="visibility:visible;left:30%;width:30%">
+                                        </div>
+                                        <div role="slider" tabIndex="0" aria-valuemin="0" aria-valuemax="1000"
+                                             aria-valuenow="300" aria-disabled="false"
+                                             class="DemoShop-rangeHandle" style="left:30%">
+                                        </div>
+                                        <div role="slider" tabIndex="0" aria-valuemin="0" aria-valuemax="1000"
+                                             aria-valuenow="600" aria-disabled="false"
+                                             class="DemoShop-rangeHandle" style="left:60%">
+                                        </div>
+                                        <div class="DemoShop-rangeMark">
                                                     <span class="DemoShop-rangeMarkText"
                                                           style="width:90%;margin-left:-45%;left:30%">300
                                                     </span>
-                                                    <span class="DemoShop-rangeMarkText"
-                                                          style="width:90%;margin-left:-45%;left:60%">600
+                                            <span class="DemoShop-rangeMarkText"
+                                                  style="width:90%;margin-left:-45%;left:60%">600
                                                     </span>
-                                                </div>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -148,450 +142,450 @@
                         </div>
                     </div>
                 </div>
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="ProductList-item col-xs-12 col-sm-6 col-md-4">
-                            <div class="ProductCard-wrapper">
-                                <div class="ProductCard-imageContainer">
-                                    <img class="ProductCard-image" src="./images/3.jpg" alt="No Picture found"/>
-                                    <div class="Rating-wrapper">
-                                        <i class="Rating-star_full"></i>
-                                        <i class="Rating-star_full"></i>
-                                        <i class="Rating-star_full"></i>
-                                        <i class="Rating-star_full"></i>
-                                        <i class="Rating-star_full"></i>
-                                    </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="ProductList-item col-xs-12 col-sm-6 col-md-4">
+                        <div class="ProductCard-wrapper">
+                            <div class="ProductCard-imageContainer">
+                                <img class="ProductCard-image" src="./images/3.jpg" alt="No Picture found"/>
+                                <div class="Rating-wrapper">
+                                    <i class="Rating-star_full"></i>
+                                    <i class="Rating-star_full"></i>
+                                    <i class="Rating-star_full"></i>
+                                    <i class="Rating-star_full"></i>
+                                    <i class="Rating-star_full"></i>
                                 </div>
-                                <div class="ProductCard-data">
-                                    <div class="ProductCard-title">
-                                        Active Coat Lorem Ipsum Dolor Sit Amet Consectetur
-                                        Adipisicing Elit.3
-                                    </div>
-                                    <div class="ProductCard-description">
-                                        Auribus teneo lupum, nam neque quomodo a me
-                                        amittam invenio neque uti retineam scio. Auribus teneo lupum, nam neque quomodo
-                                        a me amittam invenio neque uti retineam scio. Auribus teneo lupum, nam neque
-                                        quomodo a me amittam invenio neque uti retineam scio.
-                                    </div>
-                                    <div class="ProductCard-price">
+                            </div>
+                            <div class="ProductCard-data">
+                                <div class="ProductCard-title">
+                                    Active Coat Lorem Ipsum Dolor Sit Amet Consectetur
+                                    Adipisicing Elit.3
+                                </div>
+                                <div class="ProductCard-description">
+                                    Auribus teneo lupum, nam neque quomodo a me
+                                    amittam invenio neque uti retineam scio. Auribus teneo lupum, nam neque quomodo
+                                    a me amittam invenio neque uti retineam scio. Auribus teneo lupum, nam neque
+                                    quomodo a me amittam invenio neque uti retineam scio.
+                                </div>
+                                <div class="ProductCard-price">
                                         <span class="ProductPrice-wrapper">
                                             <span class="ProductPrice-currency">$</span>40.76</span>
-                                    </div>
-                                    <button class="ProductCard-button">Show more</button>
                                 </div>
+                                <button class="ProductCard-button">Show more</button>
                             </div>
                         </div>
-                        <div class="ProductList-item col-xs-12 col-sm-6 col-md-4">
-                            <div class="ProductCard-wrapper">
-                                <div class="ProductCard-imageContainer">
-                                    <img class="ProductCard-image" src="./images/2.jpg" alt="No Picture found"/>
-                                    <div class="Rating-wrapper">
-                                        <i class="Rating-star_full"></i>
-                                        <i class="Rating-star_full"></i>
-                                        <i class="Rating-star_full"></i>
-                                        <i class="Rating-star_full"></i>
-                                        <i class="Rating-star_full"></i>
-                                    </div>
+                    </div>
+                    <div class="ProductList-item col-xs-12 col-sm-6 col-md-4">
+                        <div class="ProductCard-wrapper">
+                            <div class="ProductCard-imageContainer">
+                                <img class="ProductCard-image" src="./images/2.jpg" alt="No Picture found"/>
+                                <div class="Rating-wrapper">
+                                    <i class="Rating-star_full"></i>
+                                    <i class="Rating-star_full"></i>
+                                    <i class="Rating-star_full"></i>
+                                    <i class="Rating-star_full"></i>
+                                    <i class="Rating-star_full"></i>
                                 </div>
-                                <div class="ProductCard-data">
-                                    <div class="ProductCard-title">Active Coat Lorem 2</div>
-                                    <div class="ProductCard-description">
-                                        Auribus teneo lupum, nam neque quomodo a me
-                                        amittam invenio neque uti retineam scio. Auribus teneo lupum, nam neque quomodo
-                                        a me amittam invenio neque uti retineam scio. Auribus teneo lupum, nam neque
-                                        quomodo a me amittam invenio neque uti retineam scio.
-                                    </div>
-                                    <div class="ProductCard-price">
+                            </div>
+                            <div class="ProductCard-data">
+                                <div class="ProductCard-title">Active Coat Lorem 2</div>
+                                <div class="ProductCard-description">
+                                    Auribus teneo lupum, nam neque quomodo a me
+                                    amittam invenio neque uti retineam scio. Auribus teneo lupum, nam neque quomodo
+                                    a me amittam invenio neque uti retineam scio. Auribus teneo lupum, nam neque
+                                    quomodo a me amittam invenio neque uti retineam scio.
+                                </div>
+                                <div class="ProductCard-price">
                                         <span class="ProductPrice-wrapper">
                                             <span class="ProductPrice-currency">$</span>59.53</span>
-                                    </div>
-                                    <button class="ProductCard-button">Show more</button>
                                 </div>
+                                <button class="ProductCard-button">Show more</button>
                             </div>
                         </div>
-                        <div class="ProductList-item col-xs-12 col-sm-6 col-md-4">
-                            <div class="ProductCard-wrapper">
-                                <div class="ProductCard-imageContainer">
-                                    <img class="ProductCard-image" src="./images/1.jpg" alt="No Picture found"/>
-                                    <div class="Rating-wrapper">
-                                        <i class="Rating-star_full"></i>
-                                        <i class="Rating-star_blank"></i>
-                                        <i class="Rating-star_blank"></i>
-                                        <i class="Rating-star_blank"></i>
-                                        <i class="Rating-star_blank"></i>
-                                    </div>
+                    </div>
+                    <div class="ProductList-item col-xs-12 col-sm-6 col-md-4">
+                        <div class="ProductCard-wrapper">
+                            <div class="ProductCard-imageContainer">
+                                <img class="ProductCard-image" src="./images/1.jpg" alt="No Picture found"/>
+                                <div class="Rating-wrapper">
+                                    <i class="Rating-star_full"></i>
+                                    <i class="Rating-star_blank"></i>
+                                    <i class="Rating-star_blank"></i>
+                                    <i class="Rating-star_blank"></i>
+                                    <i class="Rating-star_blank"></i>
                                 </div>
-                                <div class="ProductCard-data">
-                                    <div class="ProductCard-title">Active Coat Lorem 2</div>
-                                    <div class="ProductCard-description">
-                                        Auribus teneo lupum, nam neque quomodo a me
-                                        amittam invenio neque uti retineam scio.
-                                    </div>
-                                    <div class="ProductCard-price">
+                            </div>
+                            <div class="ProductCard-data">
+                                <div class="ProductCard-title">Active Coat Lorem 2</div>
+                                <div class="ProductCard-description">
+                                    Auribus teneo lupum, nam neque quomodo a me
+                                    amittam invenio neque uti retineam scio.
+                                </div>
+                                <div class="ProductCard-price">
                                         <span class="ProductPrice-wrapper">
                                             <span class="ProductPrice-currency">$</span>59.83</span>
-                                    </div>
-                                    <button class="ProductCard-button">Show more</button>
                                 </div>
+                                <button class="ProductCard-button">Show more</button>
                             </div>
                         </div>
-                        <div class="ProductList-item col-xs-12 col-sm-6 col-md-4">
-                            <div class="ProductCard-wrapper">
-                                <div class="ProductCard-imageContainer">
-                                    <img class="ProductCard-image" src="./images/1.jpg" alt="No Picture found"/>
-                                    <div class="Rating-wrapper">
-                                        <i class="Rating-star_full"></i>
-                                        <i class="Rating-star_full"></i>
-                                        <i class="Rating-star_full"></i>
-                                        <i class="Rating-star_full"></i>
-                                        <i class="Rating-star_full"></i>
-                                    </div>
+                    </div>
+                    <div class="ProductList-item col-xs-12 col-sm-6 col-md-4">
+                        <div class="ProductCard-wrapper">
+                            <div class="ProductCard-imageContainer">
+                                <img class="ProductCard-image" src="./images/1.jpg" alt="No Picture found"/>
+                                <div class="Rating-wrapper">
+                                    <i class="Rating-star_full"></i>
+                                    <i class="Rating-star_full"></i>
+                                    <i class="Rating-star_full"></i>
+                                    <i class="Rating-star_full"></i>
+                                    <i class="Rating-star_full"></i>
                                 </div>
-                                <div class="ProductCard-data">
-                                    <div class="ProductCard-title">Active Coat Lorem 2</div>
-                                    <div class="ProductCard-description">
-                                        Auribus teneo lupum, nam neque quomodo a me
-                                        amittam invenio neque uti retineam scio.
-                                    </div>
-                                    <div class="ProductCard-price">
+                            </div>
+                            <div class="ProductCard-data">
+                                <div class="ProductCard-title">Active Coat Lorem 2</div>
+                                <div class="ProductCard-description">
+                                    Auribus teneo lupum, nam neque quomodo a me
+                                    amittam invenio neque uti retineam scio.
+                                </div>
+                                <div class="ProductCard-price">
                                         <span class="ProductPrice-wrapper">
                                             <span class="ProductPrice-currency">$</span>81.05</span>
-                                    </div>
-                                    <button class="ProductCard-button">Show more</button>
                                 </div>
+                                <button class="ProductCard-button">Show more</button>
                             </div>
                         </div>
-                        <div class="ProductList-item col-xs-12 col-sm-6 col-md-4">
-                            <div class="ProductCard-wrapper">
-                                <div class="ProductCard-imageContainer">
-                                    <img class="ProductCard-image" src="./images/2.jpg" alt="No Picture found"/>
-                                    <div class="Rating-wrapper">
-                                        <i class="Rating-star_full"></i>
-                                        <i class="Rating-star_blank"></i>
-                                        <i class="Rating-star_blank"></i>
-                                        <i class="Rating-star_blank"></i>
-                                        <i class="Rating-star_blank"></i>
-                                    </div>
+                    </div>
+                    <div class="ProductList-item col-xs-12 col-sm-6 col-md-4">
+                        <div class="ProductCard-wrapper">
+                            <div class="ProductCard-imageContainer">
+                                <img class="ProductCard-image" src="./images/2.jpg" alt="No Picture found"/>
+                                <div class="Rating-wrapper">
+                                    <i class="Rating-star_full"></i>
+                                    <i class="Rating-star_blank"></i>
+                                    <i class="Rating-star_blank"></i>
+                                    <i class="Rating-star_blank"></i>
+                                    <i class="Rating-star_blank"></i>
                                 </div>
-                                <div class="ProductCard-data">
-                                    <div class="ProductCard-title">Active Coat Lorem 1</div>
-                                    <div class="ProductCard-description">
-                                        Auribus teneo lupum, nam neque quomodo a me
-                                        amittam invenio neque uti retineam scio.
-                                    </div>
-                                    <div class="ProductCard-price">
+                            </div>
+                            <div class="ProductCard-data">
+                                <div class="ProductCard-title">Active Coat Lorem 1</div>
+                                <div class="ProductCard-description">
+                                    Auribus teneo lupum, nam neque quomodo a me
+                                    amittam invenio neque uti retineam scio.
+                                </div>
+                                <div class="ProductCard-price">
                                         <span class="ProductPrice-wrapper">
                                             <span class="ProductPrice-currency">$</span>95.14</span>
-                                    </div>
-                                    <button class="ProductCard-button">Show more</button>
                                 </div>
+                                <button class="ProductCard-button">Show more</button>
                             </div>
                         </div>
-                        <div class="ProductList-item col-xs-12 col-sm-6 col-md-4">
-                            <div class="ProductCard-wrapper">
-                                <div class="ProductCard-imageContainer">
-                                    <img class="ProductCard-image" src="./images/2.jpg" alt="No Picture found"/>
-                                    <div class="Rating-wrapper">
-                                        <i class="Rating-star_full"></i>
-                                        <i class="Rating-star_full"></i>
-                                        <i class="Rating-star_full"></i>
-                                        <i class="Rating-star_full"></i>
-                                        <i class="Rating-star_full"></i>
-                                    </div>
+                    </div>
+                    <div class="ProductList-item col-xs-12 col-sm-6 col-md-4">
+                        <div class="ProductCard-wrapper">
+                            <div class="ProductCard-imageContainer">
+                                <img class="ProductCard-image" src="./images/2.jpg" alt="No Picture found"/>
+                                <div class="Rating-wrapper">
+                                    <i class="Rating-star_full"></i>
+                                    <i class="Rating-star_full"></i>
+                                    <i class="Rating-star_full"></i>
+                                    <i class="Rating-star_full"></i>
+                                    <i class="Rating-star_full"></i>
                                 </div>
-                                <div class="ProductCard-data">
-                                    <div class="ProductCard-title">Active Coat Lorem 1</div>
-                                    <div class="ProductCard-description">
-                                        Auribus teneo lupum, nam neque quomodo a me
-                                        amittam invenio neque uti retineam scio.
-                                    </div>
-                                    <div class="ProductCard-price">
+                            </div>
+                            <div class="ProductCard-data">
+                                <div class="ProductCard-title">Active Coat Lorem 1</div>
+                                <div class="ProductCard-description">
+                                    Auribus teneo lupum, nam neque quomodo a me
+                                    amittam invenio neque uti retineam scio.
+                                </div>
+                                <div class="ProductCard-price">
                                         <span class="ProductPrice-wrapper">
                                             <span class="ProductPrice-currency">$</span>32.24</span>
-                                    </div>
-                                    <button class="ProductCard-button">Show more</button>
                                 </div>
+                                <button class="ProductCard-button">Show more</button>
                             </div>
                         </div>
-                        <div class="ProductList-item col-xs-12 col-sm-6 col-md-4">
-                            <div class="ProductCard-wrapper">
-                                <div class="ProductCard-imageContainer">
-                                    <img class="ProductCard-image" src="./images/2.jpg" alt="No Picture found"/>
-                                    <div class="Rating-wrapper">
-                                        <i class="Rating-star_full"></i>
-                                        <i class="Rating-star_full"></i>
-                                        <i class="Rating-star_full"></i>
-                                        <i class="Rating-star_blank"></i>
-                                        <i class="Rating-star_blank"></i>
-                                    </div>
+                    </div>
+                    <div class="ProductList-item col-xs-12 col-sm-6 col-md-4">
+                        <div class="ProductCard-wrapper">
+                            <div class="ProductCard-imageContainer">
+                                <img class="ProductCard-image" src="./images/2.jpg" alt="No Picture found"/>
+                                <div class="Rating-wrapper">
+                                    <i class="Rating-star_full"></i>
+                                    <i class="Rating-star_full"></i>
+                                    <i class="Rating-star_full"></i>
+                                    <i class="Rating-star_blank"></i>
+                                    <i class="Rating-star_blank"></i>
                                 </div>
-                                <div class="ProductCard-data">
-                                    <div class="ProductCard-title">
-                                        Active Coat Lorem Ipsum Dolor Sit Amet Consectetur
-                                        Adipisicing Elit.3
-                                    </div>
-                                    <div class="ProductCard-description">
-                                        Auribus teneo lupum, nam neque quomodo a me
-                                        amittam invenio neque uti retineam scio. Auribus teneo lupum, nam neque quomodo
-                                        a me amittam invenio neque uti retineam scio. Auribus teneo lupum, nam neque
-                                        quomodo a me amittam invenio neque uti retineam scio.
-                                    </div>
-                                    <div class="ProductCard-price">
+                            </div>
+                            <div class="ProductCard-data">
+                                <div class="ProductCard-title">
+                                    Active Coat Lorem Ipsum Dolor Sit Amet Consectetur
+                                    Adipisicing Elit.3
+                                </div>
+                                <div class="ProductCard-description">
+                                    Auribus teneo lupum, nam neque quomodo a me
+                                    amittam invenio neque uti retineam scio. Auribus teneo lupum, nam neque quomodo
+                                    a me amittam invenio neque uti retineam scio. Auribus teneo lupum, nam neque
+                                    quomodo a me amittam invenio neque uti retineam scio.
+                                </div>
+                                <div class="ProductCard-price">
                                         <span class="ProductPrice-wrapper">
                                             <span class="ProductPrice-currency">$</span>96.92</span>
-                                    </div>
-                                    <button class="ProductCard-button">Show more</button>
                                 </div>
+                                <button class="ProductCard-button">Show more</button>
                             </div>
                         </div>
-                        <div class="ProductList-item col-xs-12 col-sm-6 col-md-4">
-                            <div class="ProductCard-wrapper">
-                                <div class="ProductCard-imageContainer">
-                                    <img class="ProductCard-image" src="./images/1.jpg" alt="No Picture found"/>
-                                    <div class="Rating-wrapper">
-                                        <i class="Rating-star_full"></i>
-                                        <i class="Rating-star_full"></i>
-                                        <i class="Rating-star_blank"></i>
-                                        <i class="Rating-star_blank"></i>
-                                        <i class="Rating-star_blank"></i>
-                                    </div>
+                    </div>
+                    <div class="ProductList-item col-xs-12 col-sm-6 col-md-4">
+                        <div class="ProductCard-wrapper">
+                            <div class="ProductCard-imageContainer">
+                                <img class="ProductCard-image" src="./images/1.jpg" alt="No Picture found"/>
+                                <div class="Rating-wrapper">
+                                    <i class="Rating-star_full"></i>
+                                    <i class="Rating-star_full"></i>
+                                    <i class="Rating-star_blank"></i>
+                                    <i class="Rating-star_blank"></i>
+                                    <i class="Rating-star_blank"></i>
                                 </div>
-                                <div class="ProductCard-data">
-                                    <div class="ProductCard-title">
-                                        Active Coat Lorem Ipsum Dolor Sit Amet Consectetur
-                                        Adipisicing Elit.3
-                                    </div>
-                                    <div class="ProductCard-description">
-                                        Auribus teneo lupum, nam neque quomodo a me
-                                        amittam invenio neque uti retineam scio. Auribus teneo lupum, nam neque quomodo
-                                        a me amittam invenio neque uti retineam scio. Auribus teneo lupum, nam neque
-                                        quomodo a me amittam invenio neque uti retineam scio.
-                                    </div>
-                                    <div class="ProductCard-price">
+                            </div>
+                            <div class="ProductCard-data">
+                                <div class="ProductCard-title">
+                                    Active Coat Lorem Ipsum Dolor Sit Amet Consectetur
+                                    Adipisicing Elit.3
+                                </div>
+                                <div class="ProductCard-description">
+                                    Auribus teneo lupum, nam neque quomodo a me
+                                    amittam invenio neque uti retineam scio. Auribus teneo lupum, nam neque quomodo
+                                    a me amittam invenio neque uti retineam scio. Auribus teneo lupum, nam neque
+                                    quomodo a me amittam invenio neque uti retineam scio.
+                                </div>
+                                <div class="ProductCard-price">
                                         <span class="ProductPrice-wrapper">
                                             <span class="ProductPrice-currency">$</span>62.01</span>
-                                    </div>
-                                    <button class="ProductCard-button">Show more</button>
                                 </div>
+                                <button class="ProductCard-button">Show more</button>
                             </div>
                         </div>
-                        <div class="ProductList-item col-xs-12 col-sm-6 col-md-4">
-                            <div class="ProductCard-wrapper">
-                                <div class="ProductCard-imageContainer">
-                                    <img class="ProductCard-image" src="./images/2.jpg" alt="No Picture found"/>
-                                    <div class="Rating-wrapper">
-                                        <i class="Rating-star_full"></i>
-                                        <i class="Rating-star_full"></i>
-                                        <i class="Rating-star_full"></i>
-                                        <i class="Rating-star_full"></i>
-                                        <i class="Rating-star_blank"></i>
-                                    </div>
+                    </div>
+                    <div class="ProductList-item col-xs-12 col-sm-6 col-md-4">
+                        <div class="ProductCard-wrapper">
+                            <div class="ProductCard-imageContainer">
+                                <img class="ProductCard-image" src="./images/2.jpg" alt="No Picture found"/>
+                                <div class="Rating-wrapper">
+                                    <i class="Rating-star_full"></i>
+                                    <i class="Rating-star_full"></i>
+                                    <i class="Rating-star_full"></i>
+                                    <i class="Rating-star_full"></i>
+                                    <i class="Rating-star_blank"></i>
                                 </div>
-                                <div class="ProductCard-data">
-                                    <div class="ProductCard-title">Active Coat Lorem 2</div>
-                                    <div class="ProductCard-description">
-                                        Auribus teneo lupum, nam neque quomodo a me
-                                        amittam invenio neque uti retineam scio. Auribus teneo lupum, nam neque quomodo
-                                        a me amittam invenio neque uti retineam scio. Auribus teneo lupum, nam neque
-                                        quomodo a me amittam invenio neque uti retineam scio.
-                                    </div>
-                                    <div class="ProductCard-price">
+                            </div>
+                            <div class="ProductCard-data">
+                                <div class="ProductCard-title">Active Coat Lorem 2</div>
+                                <div class="ProductCard-description">
+                                    Auribus teneo lupum, nam neque quomodo a me
+                                    amittam invenio neque uti retineam scio. Auribus teneo lupum, nam neque quomodo
+                                    a me amittam invenio neque uti retineam scio. Auribus teneo lupum, nam neque
+                                    quomodo a me amittam invenio neque uti retineam scio.
+                                </div>
+                                <div class="ProductCard-price">
                                         <span class="ProductPrice-wrapper">
                                             <span class="ProductPrice-currency">$</span>85.41</span>
-                                    </div>
-                                    <button class="ProductCard-button">Show more</button>
                                 </div>
+                                <button class="ProductCard-button">Show more</button>
                             </div>
                         </div>
-                        <div class="ProductList-item col-xs-12 col-sm-6 col-md-4">
-                            <div class="ProductCard-wrapper">
-                                <div class="ProductCard-imageContainer">
-                                    <img class="ProductCard-image" src="./images/2.jpg" alt="No Picture found"/>
-                                    <div class="Rating-wrapper">
-                                        <i class="Rating-star_full"></i>
-                                        <i class="Rating-star_full"></i>
-                                        <i class="Rating-star_full"></i>
-                                        <i class="Rating-star_full"></i>
-                                        <i class="Rating-star_full"></i>
-                                    </div>
+                    </div>
+                    <div class="ProductList-item col-xs-12 col-sm-6 col-md-4">
+                        <div class="ProductCard-wrapper">
+                            <div class="ProductCard-imageContainer">
+                                <img class="ProductCard-image" src="./images/2.jpg" alt="No Picture found"/>
+                                <div class="Rating-wrapper">
+                                    <i class="Rating-star_full"></i>
+                                    <i class="Rating-star_full"></i>
+                                    <i class="Rating-star_full"></i>
+                                    <i class="Rating-star_full"></i>
+                                    <i class="Rating-star_full"></i>
                                 </div>
-                                <div class="ProductCard-data">
-                                    <div class="ProductCard-title">Active Coat Lorem 1</div>
-                                    <div class="ProductCard-description">
-                                        Auribus teneo lupum, nam neque quomodo a me
-                                        amittam invenio neque uti retineam scio.
-                                    </div>
-                                    <div class="ProductCard-price">
+                            </div>
+                            <div class="ProductCard-data">
+                                <div class="ProductCard-title">Active Coat Lorem 1</div>
+                                <div class="ProductCard-description">
+                                    Auribus teneo lupum, nam neque quomodo a me
+                                    amittam invenio neque uti retineam scio.
+                                </div>
+                                <div class="ProductCard-price">
                                         <span class="ProductPrice-wrapper">
                                             <span class="ProductPrice-currency">$</span>53.47</span>
-                                    </div>
-                                    <button class="ProductCard-button">Show more</button>
                                 </div>
+                                <button class="ProductCard-button">Show more</button>
                             </div>
                         </div>
-                        <div class="ProductList-item col-xs-12 col-sm-6 col-md-4">
-                            <div class="ProductCard-wrapper">
-                                <div class="ProductCard-imageContainer">
-                                    <img class="ProductCard-image" src="./images/1.jpg" alt="No Picture found"/>
-                                    <div class="Rating-wrapper">
-                                        <i class="Rating-star_full"></i>
-                                        <i class="Rating-star_blank"></i>
-                                        <i class="Rating-star_blank"></i>
-                                        <i class="Rating-star_blank"></i>
-                                        <i class="Rating-star_blank"></i>
-                                    </div>
+                    </div>
+                    <div class="ProductList-item col-xs-12 col-sm-6 col-md-4">
+                        <div class="ProductCard-wrapper">
+                            <div class="ProductCard-imageContainer">
+                                <img class="ProductCard-image" src="./images/1.jpg" alt="No Picture found"/>
+                                <div class="Rating-wrapper">
+                                    <i class="Rating-star_full"></i>
+                                    <i class="Rating-star_blank"></i>
+                                    <i class="Rating-star_blank"></i>
+                                    <i class="Rating-star_blank"></i>
+                                    <i class="Rating-star_blank"></i>
                                 </div>
-                                <div class="ProductCard-data">
-                                    <div class="ProductCard-title">Active Coat Lorem 2</div>
-                                    <div class="ProductCard-description">
-                                        Auribus teneo lupum, nam neque quomodo a me
-                                        amittam invenio neque uti retineam scio.
-                                    </div>
-                                    <div class="ProductCard-price">
+                            </div>
+                            <div class="ProductCard-data">
+                                <div class="ProductCard-title">Active Coat Lorem 2</div>
+                                <div class="ProductCard-description">
+                                    Auribus teneo lupum, nam neque quomodo a me
+                                    amittam invenio neque uti retineam scio.
+                                </div>
+                                <div class="ProductCard-price">
                                         <span class="ProductPrice-wrapper">
                                             <span class="ProductPrice-currency">$</span>51.67</span>
-                                    </div>
-                                    <button class="ProductCard-button">Show more</button>
                                 </div>
+                                <button class="ProductCard-button">Show more</button>
                             </div>
                         </div>
-                        <div class="ProductList-item col-xs-12 col-sm-6 col-md-4">
-                            <div class="ProductCard-wrapper">
-                                <div class="ProductCard-imageContainer">
-                                    <img class="ProductCard-image" src="./images/2.jpg" alt="No Picture found"/>
-                                    <div class="Rating-wrapper">
-                                        <i class="Rating-star_full"></i>
-                                        <i class="Rating-star_full"></i>
-                                        <i class="Rating-star_full"></i>
-                                        <i class="Rating-star_full"></i>
-                                        <i class="Rating-star_full"></i>
-                                    </div>
+                    </div>
+                    <div class="ProductList-item col-xs-12 col-sm-6 col-md-4">
+                        <div class="ProductCard-wrapper">
+                            <div class="ProductCard-imageContainer">
+                                <img class="ProductCard-image" src="./images/2.jpg" alt="No Picture found"/>
+                                <div class="Rating-wrapper">
+                                    <i class="Rating-star_full"></i>
+                                    <i class="Rating-star_full"></i>
+                                    <i class="Rating-star_full"></i>
+                                    <i class="Rating-star_full"></i>
+                                    <i class="Rating-star_full"></i>
                                 </div>
-                                <div class="ProductCard-data">
-                                    <div class="ProductCard-title">
-                                        Active Coat Lorem Ipsum Dolor Sit Amet Consectetur
-                                        Adipisicing Elit.3
-                                    </div>
-                                    <div class="ProductCard-description">
-                                        Auribus teneo lupum, nam neque quomodo a me
-                                        amittam invenio neque uti retineam scio. Auribus teneo lupum, nam neque quomodo
-                                        a me amittam invenio neque uti retineam scio. Auribus teneo lupum, nam neque
-                                        quomodo a me amittam invenio neque uti retineam scio.
-                                    </div>
-                                    <div class="ProductCard-price">
+                            </div>
+                            <div class="ProductCard-data">
+                                <div class="ProductCard-title">
+                                    Active Coat Lorem Ipsum Dolor Sit Amet Consectetur
+                                    Adipisicing Elit.3
+                                </div>
+                                <div class="ProductCard-description">
+                                    Auribus teneo lupum, nam neque quomodo a me
+                                    amittam invenio neque uti retineam scio. Auribus teneo lupum, nam neque quomodo
+                                    a me amittam invenio neque uti retineam scio. Auribus teneo lupum, nam neque
+                                    quomodo a me amittam invenio neque uti retineam scio.
+                                </div>
+                                <div class="ProductCard-price">
                                         <span class="ProductPrice-wrapper">
                                             <span class="ProductPrice-currency">$</span>3.45</span>
-                                    </div>
-                                    <button class="ProductCard-button">Show more</button>
                                 </div>
+                                <button class="ProductCard-button">Show more</button>
                             </div>
                         </div>
-                        <div class="ProductList-item col-xs-12 col-sm-6 col-md-4">
-                            <div class="ProductCard-wrapper">
-                                <div class="ProductCard-imageContainer">
-                                    <img class="ProductCard-image" src="./images/1.jpg" alt="No Picture found"/>
-                                    <div class="Rating-wrapper">
-                                        <i class="Rating-star_full"></i>
-                                        <i class="Rating-star_full"></i>
-                                        <i class="Rating-star_full"></i>
-                                        <i class="Rating-star_full"></i>
-                                        <i class="Rating-star_blank"></i>
-                                    </div>
+                    </div>
+                    <div class="ProductList-item col-xs-12 col-sm-6 col-md-4">
+                        <div class="ProductCard-wrapper">
+                            <div class="ProductCard-imageContainer">
+                                <img class="ProductCard-image" src="./images/1.jpg" alt="No Picture found"/>
+                                <div class="Rating-wrapper">
+                                    <i class="Rating-star_full"></i>
+                                    <i class="Rating-star_full"></i>
+                                    <i class="Rating-star_full"></i>
+                                    <i class="Rating-star_full"></i>
+                                    <i class="Rating-star_blank"></i>
                                 </div>
-                                <div class="ProductCard-data">
-                                    <div class="ProductCard-title">Active Coat Lorem 1</div>
-                                    <div class="ProductCard-description">
-                                        Auribus teneo lupum, nam neque quomodo a me
-                                        amittam invenio neque uti retineam scio. Auribus teneo lupum, nam neque quomodo
-                                        a me amittam invenio neque uti retineam scio. Auribus teneo lupum, nam neque
-                                        quomodo a me amittam invenio neque uti retineam scio.
-                                    </div>
-                                    <div class="ProductCard-price">
+                            </div>
+                            <div class="ProductCard-data">
+                                <div class="ProductCard-title">Active Coat Lorem 1</div>
+                                <div class="ProductCard-description">
+                                    Auribus teneo lupum, nam neque quomodo a me
+                                    amittam invenio neque uti retineam scio. Auribus teneo lupum, nam neque quomodo
+                                    a me amittam invenio neque uti retineam scio. Auribus teneo lupum, nam neque
+                                    quomodo a me amittam invenio neque uti retineam scio.
+                                </div>
+                                <div class="ProductCard-price">
                                         <span class="ProductPrice-wrapper">
                                             <span class="ProductPrice-currency">$</span>68.48</span>
-                                    </div>
-                                    <button class="ProductCard-button">Show more</button>
                                 </div>
+                                <button class="ProductCard-button">Show more</button>
                             </div>
                         </div>
-                        <div class="ProductList-item col-xs-12 col-sm-6 col-md-4">
-                            <div class="ProductCard-wrapper">
-                                <div class="ProductCard-imageContainer">
-                                    <img class="ProductCard-image" src="./images/2.jpg" alt="No Picture found"/>
-                                    <div class="Rating-wrapper">
-                                        <i class="Rating-star_full"></i>
-                                        <i class="Rating-star_full"></i>
-                                        <i class="Rating-star_full"></i>
-                                        <i class="Rating-star_full"></i>
-                                        <i class="Rating-star_full"></i>
-                                    </div>
+                    </div>
+                    <div class="ProductList-item col-xs-12 col-sm-6 col-md-4">
+                        <div class="ProductCard-wrapper">
+                            <div class="ProductCard-imageContainer">
+                                <img class="ProductCard-image" src="./images/2.jpg" alt="No Picture found"/>
+                                <div class="Rating-wrapper">
+                                    <i class="Rating-star_full"></i>
+                                    <i class="Rating-star_full"></i>
+                                    <i class="Rating-star_full"></i>
+                                    <i class="Rating-star_full"></i>
+                                    <i class="Rating-star_full"></i>
                                 </div>
-                                <div class="ProductCard-data">
-                                    <div class="ProductCard-title">Active Coat Lorem 1</div>
-                                    <div class="ProductCard-description">
-                                        Auribus teneo lupum, nam neque quomodo a me
-                                        amittam invenio neque uti retineam scio.
-                                    </div>
-                                    <div class="ProductCard-price">
+                            </div>
+                            <div class="ProductCard-data">
+                                <div class="ProductCard-title">Active Coat Lorem 1</div>
+                                <div class="ProductCard-description">
+                                    Auribus teneo lupum, nam neque quomodo a me
+                                    amittam invenio neque uti retineam scio.
+                                </div>
+                                <div class="ProductCard-price">
                                         <span class="ProductPrice-wrapper">
                                             <span class="ProductPrice-currency">$</span>92.11</span>
-                                    </div>
-                                    <button class="ProductCard-button">Show more</button>
                                 </div>
+                                <button class="ProductCard-button">Show more</button>
                             </div>
                         </div>
-                        <div class="ProductList-item col-xs-12 col-sm-6 col-md-4">
-                            <div class="ProductCard-wrapper">
-                                <div class="ProductCard-imageContainer">
-                                    <img class="ProductCard-image" src="./images/3.jpg" alt="No Picture found"/>
-                                    <div class="Rating-wrapper">
-                                        <i class="Rating-star_full"></i>
-                                        <i class="Rating-star_full"></i>
-                                        <i class="Rating-star_full"></i>
-                                        <i class="Rating-star_blank"></i>
-                                        <i class="Rating-star_blank"></i>
-                                    </div>
+                    </div>
+                    <div class="ProductList-item col-xs-12 col-sm-6 col-md-4">
+                        <div class="ProductCard-wrapper">
+                            <div class="ProductCard-imageContainer">
+                                <img class="ProductCard-image" src="./images/3.jpg" alt="No Picture found"/>
+                                <div class="Rating-wrapper">
+                                    <i class="Rating-star_full"></i>
+                                    <i class="Rating-star_full"></i>
+                                    <i class="Rating-star_full"></i>
+                                    <i class="Rating-star_blank"></i>
+                                    <i class="Rating-star_blank"></i>
                                 </div>
-                                <div class="ProductCard-data">
-                                    <div class="ProductCard-title">Active Coat Lorem 1</div>
-                                    <div class="ProductCard-description">
-                                        Auribus teneo lupum, nam neque quomodo a me
-                                        amittam invenio neque uti retineam scio. Auribus teneo lupum, nam neque quomodo
-                                        a me amittam invenio neque uti retineam scio. Auribus teneo lupum, nam neque
-                                        quomodo a me amittam invenio neque uti retineam scio.
-                                    </div>
-                                    <div class="ProductCard-price">
+                            </div>
+                            <div class="ProductCard-data">
+                                <div class="ProductCard-title">Active Coat Lorem 1</div>
+                                <div class="ProductCard-description">
+                                    Auribus teneo lupum, nam neque quomodo a me
+                                    amittam invenio neque uti retineam scio. Auribus teneo lupum, nam neque quomodo
+                                    a me amittam invenio neque uti retineam scio. Auribus teneo lupum, nam neque
+                                    quomodo a me amittam invenio neque uti retineam scio.
+                                </div>
+                                <div class="ProductCard-price">
                                         <span class="ProductPrice-wrapper">
                                             <span class="ProductPrice-currency">$</span>99.08</span>
-                                    </div>
-                                    <button class="ProductCard-button">Show more</button>
                                 </div>
+                                <button class="ProductCard-button">Show more</button>
                             </div>
                         </div>
-                        <div class="ProductList-item col-xs-12 col-sm-6 col-md-4">
-                            <div class="ProductCard-wrapper">
-                                <div class="ProductCard-imageContainer">
-                                    <img class="ProductCard-image" src="./images/3.jpg" alt="No Picture found"/>
-                                    <div class="Rating-wrapper">
-                                        <i class="Rating-star_full"></i>
-                                        <i class="Rating-star_full"></i>
-                                        <i class="Rating-star_full"></i>
-                                        <i class="Rating-star_full"></i>
-                                        <i class="Rating-star_blank"></i>
-                                    </div>
+                    </div>
+                    <div class="ProductList-item col-xs-12 col-sm-6 col-md-4">
+                        <div class="ProductCard-wrapper">
+                            <div class="ProductCard-imageContainer">
+                                <img class="ProductCard-image" src="./images/3.jpg" alt="No Picture found"/>
+                                <div class="Rating-wrapper">
+                                    <i class="Rating-star_full"></i>
+                                    <i class="Rating-star_full"></i>
+                                    <i class="Rating-star_full"></i>
+                                    <i class="Rating-star_full"></i>
+                                    <i class="Rating-star_blank"></i>
                                 </div>
-                                <div class="ProductCard-data">
-                                    <div class="ProductCard-title">Active Coat Lorem 2</div>
-                                    <div class="ProductCard-description">
-                                        Auribus teneo lupum, nam neque quomodo a me
-                                        amittam invenio neque uti retineam scio.
-                                    </div>
-                                    <div class="ProductCard-price">
+                            </div>
+                            <div class="ProductCard-data">
+                                <div class="ProductCard-title">Active Coat Lorem 2</div>
+                                <div class="ProductCard-description">
+                                    Auribus teneo lupum, nam neque quomodo a me
+                                    amittam invenio neque uti retineam scio.
+                                </div>
+                                <div class="ProductCard-price">
                                         <span class="ProductPrice-wrapper">
                                             <span class="ProductPrice-currency">$</span>44.72</span>
-                                    </div>
-                                    <button class="ProductCard-button">Show more</button>
                                 </div>
+                                <button class="ProductCard-button">Show more</button>
                             </div>
                         </div>
                     </div>

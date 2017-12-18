@@ -21,52 +21,47 @@
         </div>
     </header>
     <main class="App-main">
-        <div>
-            <div class="App-shadow"></div>
-            <div class="ProductDisplay-wrapper">
-                <div class="ProductDisplay-nav">
-                    <a>Back</a>
-                    <label>Category: <b>Man / Active Wear</b></label>
-                </div>
-                <div class="ProductDisplay-card">
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-6">
-                            <div class="ProductDisplay-ratedImage">
-                                <img class="ProductDisplay-image" src="./images/2.jpg" alt="No Picture found"/>
-                                <div class="Rating-wrapper">
-                                    <i class="Rating-star_full"></i>
-                                    <i class="Rating-star_blank"></i>
-                                    <i class="Rating-star_blank"></i>
-                                    <i class="Rating-star_blank"></i>
-                                    <i class="Rating-star_blank"></i>
-                                </div>
+        <div class="App-shadow"></div>
+        <div class="ProductDisplay-wrapper">
+            <div class="ProductDisplay-nav">
+                <a>Back</a>
+                <label>Category: <b>Man / Active Wear</b></label>
+            </div>
+            <div class="ProductDisplay-card">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="ProductDisplay-ratedImage">
+                            <img class="ProductDisplay-image" src="./images/2.jpg" alt="No Picture found"/>
+                            <div class="Rating-wrapper">
+                                <i class="Rating-star_full"></i>
+                                <i class="Rating-star_blank"></i>
+                                <i class="Rating-star_blank"></i>
+                                <i class="Rating-star_blank"></i>
+                                <i class="Rating-star_blank"></i>
                             </div>
                         </div>
-                        <div class="col-xs-12 col-sm-6">
-                            <h2 class="ProductDisplay-name">Active Coat Lorem 2</h2>
-                            <div class="ProductDisplay-details">
-                                <div class="ProductDisplay-description">
-                                    Auribus teneo lupum, nam neque quomodo a me amittam invenio neque uti retineam scio.
-                                    <div class="ProductDisplay-adminActions">
-                                        You can
-                                        <a class="DemoShop-link" href="javascript:void(0);">add 5 more</a>.
-                                        You can also
-                                        <a class="DemoShop-link" onclick="togglePopup('editModal')">edit details</a>
-                                        or
-                                        <a class="DemoShop-link" onclick="togglePopup('deleteModal')">delete</a>
-                                        them.
-                                    </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <h2 class="ProductDisplay-name">Active Coat Lorem 2</h2>
+                        <div class="ProductDisplay-details">
+                            <div class="ProductDisplay-description">
+                                Auribus teneo lupum, nam neque quomodo a me amittam invenio neque uti retineam scio.
+                                <div class="ProductDisplay-adminActions">
+                                    You can
+                                    <a class="DemoShop-link" href="javascript:void(0);">add 5 more</a>.
+                                    You can also
+                                    <a class="DemoShop-link" onclick="togglePopup('editModal')">edit details</a>
+                                    or
+                                    <a class="DemoShop-link" onclick="togglePopup('deleteModal')">delete</a>
+                                    them.
                                 </div>
-                                <div class="ProductDisplay-buy">
-                                    <div>
-                                        <span class="ProductPrice-wrapper">
-                                            <span class="ProductPrice-currency">$</span>57.35</span>
-                                        <span class="ProductDisplay-left"> (1 item left)</span>
-                                    </div>
-                                    <div>
-                                        <button onclick="togglePopup('buyModal')" class="DemoShop-button">Buy</button>
-                                    </div>
+                            </div>
+                            <div class="ProductDisplay-buy">
+                                <div class="ProductPrice-wrapper">
+                                    <span class="ProductPrice-currency">$</span>57.35<!--
+                                 --><span class="ProductDisplay-left"> (1 item left)</span>
                                 </div>
+                                <button onclick="togglePopup('buyModal')" class="DemoShop-button">Buy</button>
                             </div>
                         </div>
                     </div>
@@ -79,7 +74,7 @@
     </footer>
 </div>
 
-<div class="ProductEdit-wrapper inactive" id="editModal" >
+<div class="ProductEdit-wrapper inactive" id="editModal">
     <div class="Modal-back"></div>
     <div class="Modal-wrapper">
         <div class="Modal-title">
@@ -174,8 +169,8 @@
         <div class="Modal-title">Are you sure?</div>
         <div class="Modal-content">
             <div class="ProductDisplay-DeleteModalText">
-                <span>You are trying to delete this product.</span>
-                <div>Are you sure you want this?</div>
+                <span>You are trying to delete this product.</span><br>
+                <span>Are you sure you want this?</span>
             </div>
             <div class="ConfirmButtons-wrapper">
                 <button class="DemoShop-button_bigSecondary" onclick="togglePopup('deleteModal')">

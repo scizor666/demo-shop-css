@@ -531,6 +531,10 @@ body, html, .App {
     margin-bottom: 8px;
     display: inline-block; }
 
+.FilterPrice-wrapper .FilterModal-filterName {
+  margin-bottom: 8px;
+  display: inline-block; }
+
 .Login-wrapper .Modal-wrapper {
   max-width: 570px; }
   .Login-wrapper .Modal-wrapper .Modal-content {
@@ -735,6 +739,9 @@ body, html, .App {
   display: flex;
   justify-content: space-between;
   padding-top: 20px; }
+
+.ProductDisplay-left {
+  font-weight: normal; }
 
 .ProductDisplay-left, .ProductDisplay-notAvailable {
   font-size: 16px;
