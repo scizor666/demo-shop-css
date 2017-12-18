@@ -419,20 +419,20 @@ class ReviewAdder extends HTMLElement {
     addRateHandler() {
         const reviewRating = this.shadow.getElementById('review-rating');
         reviewRating.addEventListener('click', e => {
-            const newRatingIndex = Array.prototype.indexOf.call(reviewRating.children, e.target);
-            if (newRatingIndex < 0) return;
-            this.setNewRateByIndex(newRatingIndex);
+            const newRate = Array.prototype.indexOf.call(reviewRating.children, e.target) + 1;
+            if (newRate <= 0) return;
+            this.setNewRate(newRate);
         });
     }
 
-    setNewRateByIndex(rateIndex) {
+    setNewRate(rate) {
         const reviewRating = this.shadow.getElementById('review-rating');
         const previewRating = this.shadow.getElementById('preview-rating');
         const reviewBlankClass = 'review-star_blank';
         const previewBlankClass = 'preview-star_blank';
         Array.prototype.forEach.call(reviewRating.children, (e, i) => {
             const previewStar = previewRating.children[i];
-            if (rateIndex < i) {
+            if (rate <= i) {
                 if (!e.classList.contains(reviewBlankClass)) e.className += ` ${reviewBlankClass}`;
                 if (!previewStar.classList.contains(previewBlankClass)) {
                     previewStar.className += ` ${previewBlankClass}`;
@@ -483,7 +483,7 @@ class ReviewAdder extends HTMLElement {
         imageUploadedText.textContent = this.placeholders.imageNotSelected;
         this.shadow.getElementById('review-name').value = '';
         this.shadow.getElementById('preview-name').textContent = this.placeholders.name;
-        this.setNewRateByIndex(-1);
+        this.setNewRate(0);
         this.shadow.getElementById('preview-rating').setAttribute('hidden', '');
         this.shadow.getElementById('review-submit').setAttribute('disabled', '');
     }
