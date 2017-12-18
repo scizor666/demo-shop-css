@@ -417,6 +417,12 @@ input:checked + .DemoShop-slider:before {
   -ms-filter: blur(5px);
   filter: blur(5px); }
 
+.active {
+  display: block; }
+
+.inactive {
+  display: none; }
+
 body {
   font-family: "PT Sans", sans-serif;
   font-size: 14px;
