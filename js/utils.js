@@ -1,9 +1,13 @@
 const toggleDisplay = id => {
     const element = document.getElementById(id);
-    if (element.style.display === "none") {
-        element.style.display = "block";
+    const activeClass = 'active';
+    const inactiveClass = 'inactive';
+    if (element.classList.contains(activeClass)) {
+        element.classList.remove(activeClass);
+        element.className += ' ' + inactiveClass;
     } else {
-        element.style.display = "none";
+        element.classList.remove(inactiveClass);
+        element.className += ' ' + activeClass;
     }
 };
 

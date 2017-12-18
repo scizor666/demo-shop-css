@@ -2,7 +2,7 @@
   background-color: rgba(0,0,0,0.75);
   height: 30px;
   width: 100%;
-  display: block;
+  display: flex;
   padding: 5px 0 0 20px;
   font-size: 1rem;
   position: absolute;
@@ -15,7 +15,6 @@
   width: 18px;
   height: 18px;
   background-size: contain;
-  display: inline-block;
 }
 
 .Rating-star_full {
