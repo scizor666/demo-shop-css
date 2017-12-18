@@ -1,7 +1,7 @@
 .App-header {
   margin: 0 auto;
   height: 45px;
-  background: $main-color;
+  background: linear-gradient(180deg, #449587 0%, #2A8676 100%);
   padding: 10px $main-margin-width;
   display: flex;
   justify-content: space-between;
@@ -27,7 +27,9 @@
 }
 
 #App-logo {
- width: 24px;
+ width: 28px;
+ height: 28px;
+ margin-top: -1px;
 }
 
 .App-footer {
