@@ -31,10 +31,17 @@
                 <div class="ProductDisplay-card">
                     <div class="row">
                         <div class="col-xs-12 col-sm-6">
-                            <div class="ProductDisplay-ratedImage"><image-slider images='["images/1.jpg","images/2.jpg","images/3.jpg"]'></image-slider>
-                                <div class="Rating-wrapper"><i class="Rating-star_full"></i><i
-                                        class="Rating-star_full"></i><i class="Rating-star_blank"></i><i
-                                        class="Rating-star_blank"></i><i class="Rating-star_blank"></i></div>
+                            <div class="ProductDisplay-ratedImage">
+                                <image-slider
+                                        images='[{"src":"images/1.jpg","text":"image 1"},{"src":"images/2.jpg","text":"some image 2"},{"src":"images/3.jpg","text":"blabla"}]'>
+                                </image-slider>
+                                <div class="Rating-wrapper">
+                                    <i class="Rating-star_full"></i>
+                                    <i class="Rating-star_full"></i>
+                                    <i class="Rating-star_blank"></i>
+                                    <i class="Rating-star_blank"></i>
+                                    <i class="Rating-star_blank"></i>
+                                </div>
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-6">
@@ -46,7 +53,7 @@
                                 <div class="ProductDisplay-buy">
                                     <div class="ProductPrice-wrapper">
                                         <span class="ProductPrice-currency">$</span>90.88<!--
-                                 --><span class="ProductDisplay-left"> (1 item left)</span>
+                                     --><span class="ProductDisplay-left"> (1 item left)</span>
                                     </div>
                                     <button onclick="togglePopup('buyModal')" class="DemoShop-button">Buy</button>
                                 </div>
@@ -55,11 +62,16 @@
                     </div>
                 </div>
                 <div class="Review-wrapper">
-                    <div class="Review-tooltip">There is no user reviews for now.<br><span id="Review-wouldReview">Would you like to
-                        <a id="Review-shareLink" href="javascript:void(0);" onclick="toggleReviewAdderDisplay()">share your thoughts with other customers</a>?</span>
+                    <div class="Review-tooltip">There is no user reviews for now.<br>
+                        <span id="Review-wouldReview">Would you like to
+                            <a id="Review-shareLink" href="javascript:void(0);" onclick="toggleReviewAdderDisplay()">
+                                share your thoughts with other customers</a>?
+                        </span>
                         <span id="Review-share" hidden>Share your thoughts with other customers:</span>
                     </div>
-                    <div id="Review-adder"><review-adder hidden></review-adder></div>
+                    <div id="Review-adder">
+                        <review-adder hidden></review-adder>
+                    </div>
                 </div>
             </div>
         </div>
@@ -84,9 +96,9 @@
     </div>
 </div>
 <script>
-    document.querySelector("review-adder").shadowRoot.
-    getElementById("review-cancel").addEventListener('click', () => toggleReviewAdderDisplay());
-    const toggleReviewAdderDisplay = ()  =>  {
+    document.querySelector("review-adder")
+        .shadowRoot.getElementById("review-cancel").addEventListener('click', () => toggleReviewAdderDisplay());
+    const toggleReviewAdderDisplay = () => {
         const wouldReview = document.getElementById('Review-wouldReview');
         const sharing = document.getElementById('Review-share');
         const reviewAdder = document.querySelector('review-adder');

@@ -17,6 +17,29 @@ class ImageSlider extends HTMLElement {
             #image-canvas { 
                 width: 100%; 
                 display: block;} 
+            #image-label {
+                position: absolute;
+                bottom: 50px;
+                width: 100%;
+                color: #FFFFFF;	
+                font-size: 14px;	
+                font-style: italic;
+                line-height: 19px;	
+                text-align: center;
+                white-space: nowrap;
+                overflow: hidden;
+                pointer-events: none;
+            }
+            #image-label.to-left, #image-label.to-right {
+                transition: .5s;
+                opacity: 0;
+            }
+            .to-left {
+                text-indent: -200%;
+            }
+            .to-right {
+                text-indent: 200%;
+            }
             #left-arrow, #right-arrow {
                 position: absolute; 
                 height: 50px; 
@@ -71,6 +94,7 @@ class ImageSlider extends HTMLElement {
     html() {
         return `<div id="wrapper">
                     <canvas id="image-canvas"></canvas>
+                    <div id="image-label"></div>
                     <div id="hover-area"></div>                 
                 </div>
                 <span id="left-arrow" disabled></span>
@@ -95,6 +119,7 @@ class ImageSlider extends HTMLElement {
         leftArrow.addEventListener("click", _.throttle(() => {
 
             if (this.state.currentIndex === 0) return;
+            this.moveImageLabel('to-right');
             this.renderImage(this.state.images[--this.state.currentIndex]);
             if (this.state.currentIndex === 0) leftArrow.setAttribute('disabled', '');
             rightArrow.removeAttribute('disabled');
@@ -103,10 +128,10 @@ class ImageSlider extends HTMLElement {
         rightArrow.addEventListener("click", _.throttle(() => {
 
             if (this.state.currentIndex === imagesCount - 1) return;
+            this.moveImageLabel('to-left');
             this.renderImage(this.state.images[++this.state.currentIndex]);
             if (this.state.currentIndex === imagesCount - 1) rightArrow.setAttribute('disabled', '');
             leftArrow.removeAttribute('disabled');
-
         }, 300));
 
     }
@@ -164,7 +189,7 @@ class ImageSlider extends HTMLElement {
         }
     }
 
-    renderImage(imgSource, opacity = .5, delay = 100) {
+    renderImage(image, opacity = .5, delay = 100) {
         const canvas = this.state.canvas;
         const img = new Image();
         img.onload = () => {
@@ -174,7 +199,14 @@ class ImageSlider extends HTMLElement {
             }
             this.drawImageWithAnimation(img, opacity, delay);
         };
-        img.src = imgSource;
+        img.src = image.src;
+        this.shadow.getElementById('image-label').innerText = image.text;
+    }
+
+    moveImageLabel(direction) {
+        const label = this.shadow.getElementById('image-label');
+        label.className += ` ${direction}`;
+        setTimeout(() => label.classList.remove(direction), 300);
     }
 
     drawImageWithAnimation(image, opacity, delay) {
